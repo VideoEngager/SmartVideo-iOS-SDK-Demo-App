@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>Environment</key>
+			<string>live</string>
+			<key>Engine</key>
+			<string>generic</string>
+			<key>SmartVideo URL</key>
+			<string>videome.videoengager.com</string>
+			<key>ShortUrl</key>
+			<string>pureclouddemo</string>
+		</dict>
+		<dict>
+			<key>SmartVideo URL</key>
+			<string>staging.videoengager.com</string>
+			<key>Environment</key>
+			<string>staging</string>
+			<key>agents</key>
+			<array>
+				<dict>
+					<key>Tenant ID</key>
+					<string>oIiTR2XQIkb7p0ub</string>
+					<key>Name</key>
+					<string>slavd</string>
+				</dict>
+			</array>
+			<key>Environment URL</key>
+			<string>https://api.mypurecloud.de</string>
+			<key>Queue Name</key>
+			<string>Support</string>
+			<key>Organization ID</key>
+			<string>639292ca-14a2-400b-8670-1f545d8aa860</string>
+			<key>Engine</key>
+			<string>genesys</string>
+			<key>Deployment ID</key>
+			<string>1b4b1124-b51c-4c38-899f-3a90066c76cf</string>
+		</dict>
+		<dict>
+			<key>SmartVideo URL</key>
+			<string>videome.videoengager.com</string>
+			<key>Environment</key>
+			<string>live</string>
+			<key>agents</key>
+			<array>
+				<dict>
+					<key>Tenant ID</key>
+					<string>0FphTk091nt7G1W7</string>
+					<key>Name</key>
+					<string>slava</string>
+				</dict>
+			</array>
+			<key>Environment URL</key>
+			<string>https://api.mypurecloud.com</string>
+			<key>Queue Name</key>
+			<string>MobileDev</string>
+			<key>Organization ID</key>
+			<string>c4b553c3-ee42-4846-aeb1-f0da3d85058e</string>
+			<key>Engine</key>
+			<string>genesys</string>
+			<key>Deployment ID</key>
+			<string>973f8326-c601-40c6-82ce-b87e6dafef1c</string>
+		</dict>
+	</array>
+</dict>
+</plist>

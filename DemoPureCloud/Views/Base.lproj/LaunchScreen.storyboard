@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AEZ-W7-Fw3"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xen-m5-tWa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="launchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="Dpa-jp-AIi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="i4C-cb-GRo">
+                                <rect key="frame" x="87.5" y="304.5" width="200" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="k1j-zb-T6M"/>
+                                    <constraint firstAttribute="width" constant="200" id="naj-pO-eUU"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Dpa-jp-AIi" secondAttribute="trailing" id="Ji7-rj-oIi"/>
+                            <constraint firstItem="i4C-cb-GRo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RTt-NW-Adb"/>
+                            <constraint firstItem="i4C-cb-GRo" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ZjQ-3n-xZ2"/>
+                            <constraint firstItem="Dpa-jp-AIi" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="fWM-WL-1qz"/>
+                            <constraint firstAttribute="bottom" secondItem="Dpa-jp-AIi" secondAttribute="bottom" id="j7y-1L-H8f"/>
+                            <constraint firstItem="Dpa-jp-AIi" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="maE-Jy-urf"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="51.86915887850467" y="374.51403887688986"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="launchScreen" width="400" height="800"/>
+        <image name="logo" width="200" height="58"/>
+    </resources>
+</document>

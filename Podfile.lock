@@ -1,0 +1,44 @@
+PODS:
+  - GoogleWebRTC (1.1.31999)
+  - L10n-swift (5.8.0):
+    - L10n-swift/Core (= 5.8.0)
+    - L10n-swift/Extension (= 5.8.0)
+    - L10n-swift/IBInspectable (= 5.8.0)
+  - L10n-swift/Core (5.8.0)
+  - L10n-swift/Extension (5.8.0):
+    - L10n-swift/Core
+  - L10n-swift/IBInspectable (5.8.0):
+    - L10n-swift/Core
+  - ShimmerSwift (2.1.1)
+  - SmartVideo (1.0.0):
+    - GoogleWebRTC
+
+DEPENDENCIES:
+  - L10n-swift (~> 5.8)
+  - ShimmerSwift
+  - SmartVideo (from `https://github.com/VideoEngager/SmartVideo-iOS-SDK`)
+
+SPEC REPOS:
+  trunk:
+    - GoogleWebRTC
+    - L10n-swift
+    - ShimmerSwift
+
+EXTERNAL SOURCES:
+  SmartVideo:
+    :git: https://github.com/VideoEngager/SmartVideo-iOS-SDK
+
+CHECKOUT OPTIONS:
+  SmartVideo:
+    :commit: 84a8e07d13ae11e787dbd8901d797be5e4ae9b55
+    :git: https://github.com/VideoEngager/SmartVideo-iOS-SDK
+
+SPEC CHECKSUMS:
+  GoogleWebRTC: b39a78c4f5cc6b0323415b9233db03a2faa7b0f0
+  L10n-swift: 80e7e9c13521bcfb8f2fb0cf2ae08199efeb1ec6
+  ShimmerSwift: f7ed2daf9c246de8299dfd9e12c6ab465cba9842
+  SmartVideo: b81800147d0067da5da7cd8a085b0b7489978dbd
+
+PODFILE CHECKSUM: 4dc21f8479333d581eba7a91970964c36e0bae2e
+
+COCOAPODS: 1.10.1

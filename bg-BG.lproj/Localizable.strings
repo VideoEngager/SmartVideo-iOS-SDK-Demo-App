@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  DemoPureCloud
+
+  Copyright © 2021 VideoEngager. All rights reserved.
+  
+*/
+"app_version" = "Версия";
+"backButtonItem" = "Назад";
+
+"staging_server" = "Staging Сървър";
+"prod_server" = "Prod Сървър";
+"start_audio_button" = "Стартиране на аудио";
+"start_video_button" = "Стартиране на видео";
+
+"customer_name" = "Име на клиент";
+"org_id" = "Organization Id";
+"deployment_id" = "Deployment Id";
+"ve_url" = "VideoEngager URL";
+"tenant_id" = "Tenant Id";
+"env" = "Environment";
+"genesys_cloud_queue" = "Genesys PureCloud Queue";
+
+
+"config_params_error_title" = "Грешка";
+"config_params_error_message" = "Има грешка във Вашите конфигурационни параметри. Повечето от тях се конфигурират чрез plist файл Smart Video. Моля, проверете коректността на plist файла и неговите параметри.";
+"config_params_error_action" = "Добре";
+

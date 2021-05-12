@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  DemoPureCloud
+
+  Copyright © 2021 VideoEngager. All rights reserved.
+  
+*/
+"app_version" = "Versão";
+"backButtonItem" = "Back";
+
+"staging_server" = "Staging Servidor";
+"prod_server" = "Prod Servidor";
+"start_audio_button" = "Iniciar áudio";
+"start_video_button" = "Iniciar vídeo";
+
+"customer_name" = "Nome do cliente";
+"org_id" = "Organization Id";
+"deployment_id" = "Deployment Id";
+"ve_url" = "VideoEngager URL";
+"tenant_id" = "Tenant Id";
+"env" = "Environment";
+"genesys_cloud_queue" = "Genesys PureCloud Queue";
+
+
+"config_params_error_title" = "Erro";
+"config_params_error_message" = "Há um erro em seus parâmetros de configuração. A maioria deles é configurada por meio do arquivo plist do Smart Video. Valide a exatidão do arquivo plist e seus parâmetros.";
+"config_params_error_action" = "Multar";
+
+
+ 
