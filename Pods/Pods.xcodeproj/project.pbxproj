@@ -16,6 +16,7 @@
 				FC8A3DCD77AF0A764A7A90ABA586762B /* PBXTargetDependency */,
 			);
 			name = SmartVideo;
+			productName = SmartVideo;
 		};
 		EC23BFCFC44D9224C054485B54824B8E /* GoogleWebRTC */ = {
 			isa = PBXAggregateTarget;
@@ -25,6 +26,7 @@
 			dependencies = (
 			);
 			name = GoogleWebRTC;
+			productName = GoogleWebRTC;
 		};
 /* End PBXAggregateTarget section */
 
@@ -170,15 +172,15 @@
 		713FCB1C26888FDD123F3C11C4391916 /* String+Localizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Localizable.swift"; path = "Source/Extensions/String+Localizable.swift"; sourceTree = "<group>"; };
 		71E13F1C5810B696CF0FAFA4F8A962F7 /* L10n-swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "L10n-swift-Info.plist"; sourceTree = "<group>"; };
 		78D4B3EA0D1D7FBCF11AA2B3BC17F1CB /* NumericPluralArg.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NumericPluralArg.swift; path = Source/Core/Plural/NumericPluralArg.swift; sourceTree = "<group>"; };
-		7D89B15E8EC593168732FFBFF33172E9 /* L10n_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = L10n_swift.framework; path = "L10n-swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D89B15E8EC593168732FFBFF33172E9 /* L10n_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = L10n_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3117AF530E13684A63E722B8121F1D /* Locale+utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Locale+utils.swift"; path = "Source/Core/Extensions/Locale+utils.swift"; sourceTree = "<group>"; };
 		7F09369095EEDB143AE9A34BDA9F76D7 /* RightToLeftTextDecorator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RightToLeftTextDecorator.swift; path = Source/Core/TextDecorator/RightToLeftTextDecorator.swift; sourceTree = "<group>"; };
 		8D758728C91FEF84CFA683CEABC6CC37 /* SmartVideo-Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SmartVideo-Swift.h"; path = "SmartVideo.framework/Headers/SmartVideo-Swift.h"; sourceTree = "<group>"; };
 		8E3EBE1C6755BC0479423986CE303E8C /* DoubleLengthTextDecorator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DoubleLengthTextDecorator.swift; path = Source/Core/TextDecorator/DoubleLengthTextDecorator.swift; sourceTree = "<group>"; };
 		906392AB17595ACB9E5B2E1B7F8D692B /* AccentedTextDecorator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AccentedTextDecorator.swift; path = Source/Core/TextDecorator/AccentedTextDecorator.swift; sourceTree = "<group>"; };
-		93027197DCE144EF9A5DDF15E6C717AA /* ShimmerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ShimmerSwift.framework; path = ShimmerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93027197DCE144EF9A5DDF15E6C717AA /* ShimmerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ShimmerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99F1A1564175ACF89FE7AF86B72E2B87 /* UIViewController+IBL10n.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+IBL10n.swift"; path = "Source/IBInspectables/UIKit/Common/UIViewController+IBL10n.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A2275CE1B180094BC8D2CB41A3FA56D3 /* Shimmer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Shimmer.swift; path = Shimmer/Shimmer.swift; sourceTree = "<group>"; };
 		A3DF170830A0835AA5D66A48B8C2EBAF /* UITextField+IBL10n.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextField+IBL10n.swift"; path = "Source/IBInspectables/UIKit/Common/UITextField+IBL10n.swift"; sourceTree = "<group>"; };
 		A80D491AF4A4609BEC84FEA6CAA3A6B3 /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebRTC.framework; path = Frameworks/frameworks/WebRTC.framework; sourceTree = "<group>"; };
@@ -193,7 +195,7 @@
 		BC23A28F063D61319487BE05FC364B8C /* SmartVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SmartVideo.release.xcconfig; sourceTree = "<group>"; };
 		BF07D7A03573713DB690F513C6B99E7D /* L10n-swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "L10n-swift-prefix.pch"; sourceTree = "<group>"; };
 		C326B502932AC9424F060EB226BBFFFB /* ShimmerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ShimmerSwift-umbrella.h"; sourceTree = "<group>"; };
-		C48163E0D6C17553B56B571B95DBB8DB /* Pods_DemoPureCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DemoPureCloud.framework; path = "Pods-DemoPureCloud.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C48163E0D6C17553B56B571B95DBB8DB /* Pods_DemoPureCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoPureCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6A3C26B645157602065A82F9C399E8A /* SmartVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SmartVideo.framework; sourceTree = "<group>"; };
 		C94D5516F04A5CD2DF0B11B59DEC675B /* StringResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringResource.swift; path = Source/Core/Resource/Resource/StringResource.swift; sourceTree = "<group>"; };
 		CA129E3265605D59251115BF7A21CAE2 /* Date+Localizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Localizable.swift"; path = "Source/Extensions/Date+Localizable.swift"; sourceTree = "<group>"; };
@@ -209,7 +211,7 @@
 		DB30F59A59CAFF1F7F9EEF0259E1D820 /* ShimmeringMaskLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShimmeringMaskLayer.swift; path = Shimmer/ShimmeringMaskLayer.swift; sourceTree = "<group>"; };
 		E22BE6AA64B49C43FF5DE80798B9108B /* L10n-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "L10n-swift.release.xcconfig"; sourceTree = "<group>"; };
 		E40B648E4417F27A6D8A0E2205583A37 /* UIDatePicker+IBL10n.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIDatePicker+IBL10n.swift"; path = "Source/IBInspectables/UIKit/iOS/UIDatePicker+IBL10n.swift"; sourceTree = "<group>"; };
-		E91BBD9979CD76E15FC0BDDAA035F6DF /* Plural.stringsdict */ = {isa = PBXFileReference; includeInIndex = 1; name = Plural.stringsdict; path = Source/Core/Plural/Plural.stringsdict; sourceTree = "<group>"; };
+		E91BBD9979CD76E15FC0BDDAA035F6DF /* Plural.stringsdict */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.stringsdict; name = Plural.stringsdict; path = Source/Core/Plural/Plural.stringsdict; sourceTree = "<group>"; };
 		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		EC6B1B3CCF765D46BF71DB3EAFF69DC0 /* L10n.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = L10n.swift; path = Source/Core/L10n.swift; sourceTree = "<group>"; };
 		F06C05A058D86A8FDFD4FA571CFF420D /* Bundle+utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+utils.swift"; path = "Source/Core/Extensions/Bundle+utils.swift"; sourceTree = "<group>"; };
@@ -274,7 +276,6 @@
 				50F15402755F28B1592E333E91E3ED3D /* Frameworks */,
 				D85CCDFCAE86381F660B04F0413C0861 /* Support Files */,
 			);
-			name = SmartVideo;
 			path = SmartVideo;
 			sourceTree = "<group>";
 		};
@@ -284,7 +285,6 @@
 				CA0B52DEB7FE2399B9C414C613415628 /* Frameworks */,
 				C69CDB145FCF9105094A4DBFA8520ECB /* Support Files */,
 			);
-			name = GoogleWebRTC;
 			path = GoogleWebRTC;
 			sourceTree = "<group>";
 		};
@@ -297,7 +297,6 @@
 				AD17250F460877B8A2C2FCAF0AAD1E2F /* ShimmeringView.swift */,
 				C8B8E8C3379C17779714B9D198E491DE /* Support Files */,
 			);
-			name = ShimmerSwift;
 			path = ShimmerSwift;
 			sourceTree = "<group>";
 		};
@@ -401,7 +400,6 @@
 				BBCA2424214E4EE33865DA33F9B59977 /* IBInspectable */,
 				9F49DAD3BAF883D875530F540792A84C /* Support Files */,
 			);
-			name = "L10n-swift";
 			path = "L10n-swift";
 			sourceTree = "<group>";
 		};
@@ -788,6 +786,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "Target Support Files/ShimmerSwift/ShimmerSwift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ShimmerSwift/ShimmerSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -824,6 +823,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Target Support Files/Pods-DemoPureCloud/Pods-DemoPureCloud-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -987,6 +987,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "Target Support Files/L10n-swift/L10n-swift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/L10n-swift/L10n-swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1024,6 +1025,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Target Support Files/Pods-DemoPureCloud/Pods-DemoPureCloud-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1080,6 +1082,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "Target Support Files/ShimmerSwift/ShimmerSwift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ShimmerSwift/ShimmerSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1115,6 +1118,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "Target Support Files/L10n-swift/L10n-swift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/L10n-swift/L10n-swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
