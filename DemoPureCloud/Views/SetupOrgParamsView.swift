@@ -9,16 +9,15 @@ import Foundation
 import UIKit
 import SmartVideo
 
-
 class SetupOrgParamsView: UIView, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     let ENTRY_CELL_HEIGHT: CGFloat = 70
     let NUM_ROWS: Int = 7
     
-//    var placeholderArray = ["Customer Name","Organization Id","Deployment Id", "VideoEngager URL", "Tenant Id", "Environment", "Genesys PureCloud Queue"]
+
     var placeholderArray = [String]()
-    let iconNameArray = ["url", "url", "url", "url", "url", "url", "url"]
-    var initParams = Array<Any>()
+    let iconNameArray = ["person", "signature", "d.square", "figure.stand", "creditcard", "link", "figure.stand"]
+    var initParams = [String]()
     
     
     lazy var scrollView: UIScrollView = {
@@ -76,14 +75,8 @@ class SetupOrgParamsView: UIView, UITableViewDelegate, UITableViewDataSource, UI
         return lb
     }()
     
-    private var customer_name = "Mobile Tester"
-    private var org_id = ""
-    private var dep_id = ""
-    private var smart_video_url = ""
-    private var tenant_id = ""
-    private var host_url = ""
-    private var genesys_host_url = ""
-    private var genesys_queue = ""
+
+    var customer_name: String?
     var environment: Environment = .live
     
     var GENESYS_CLOUD_INIT_PARAMS_LIVE = [String]()
@@ -97,6 +90,17 @@ class SetupOrgParamsView: UIView, UITableViewDelegate, UITableViewDataSource, UI
         
         
         setupViews()
+        
+        placeholderArray = [
+            "customer_name".l10n(),
+            "org_id".l10n(),
+            "deployment_id".l10n(),
+            // "ve_url".l10n(),
+            "agent_shortUrl".l10n(),
+            "tenant_id".l10n(),
+            "env".l10n(),
+            "genesys_cloud_queue".l10n()
+        ]
         
         var nsDictionary: NSDictionary?
         if let path = Bundle.main.path(forResource: "SmartVideo-Info", ofType: "plist") {
@@ -114,46 +118,52 @@ class SetupOrgParamsView: UIView, UITableViewDelegate, UITableViewDataSource, UI
 
         for item in array {
             if let config = try? GenesysConfigurations(dictionary: item) {
-                org_id = config.organizationID
-                dep_id = config.deploymentID
-                smart_video_url = config.engineUrl
-                genesys_host_url = config.environmentURL
-                genesys_queue = config.queue
-                environment = config.environment
+                let organization_id = config.organizationID
+                let deployment_id = config.deploymentID
+                let genesysHostUrl = config.environmentURL
+                let genesysQueue = config.queue
+                let env = config.environment
+                var shortUrl = String()
+                var tenantId = String()
                 if let agentsArray = item["agents"] as? [[String: String]] {
                     for agentData in agentsArray {
                         if let tennantId = agentData["Tenant ID"]
                         {
-                            tenant_id = tennantId
+                            tenantId = tennantId
+                        }
+                        if let sUrl = agentData["Name"]
+                        {
+                            shortUrl = sUrl
                         }
                     }
                 }
-                if environment == .live {
-                    GENESYS_CLOUD_INIT_PARAMS_LIVE = [customer_name, org_id, dep_id, smart_video_url, tenant_id, genesys_host_url, genesys_queue]
-                } else if environment == .staging {
-                    GENESYS_CLOUD_INIT_PARAMS_STAGING = [customer_name, org_id, dep_id, smart_video_url, tenant_id, genesys_host_url, genesys_queue]
+                if env == .live {
+                    GENESYS_CLOUD_INIT_PARAMS_LIVE = [
+                        self.customer_name ?? "",
+                        organization_id,
+                        deployment_id,
+                        shortUrl,
+                        tenantId,
+                        genesysHostUrl,
+                        genesysQueue
+                    ]
+                } else if env == .staging {
+                    GENESYS_CLOUD_INIT_PARAMS_STAGING = [
+                        self.customer_name ?? "",
+                        organization_id,
+                        deployment_id,
+                        shortUrl,
+                        tenantId,
+                        genesysHostUrl,
+                        genesysQueue
+                    ]
                 }
             }
         }
         
-        initParams = GENESYS_CLOUD_INIT_PARAMS_STAGING
-        environment = .staging
-        
-        
-        placeholderArray = [
-            "customer_name".l10n(),
-            "org_id".l10n(),
-            "deployment_id".l10n(),
-            "ve_url".l10n(),
-            "tenant_id".l10n(),
-            "env".l10n(),
-            "genesys_cloud_queue".l10n()
-        ]
         
         
         self.tableView.register(ParamsCell.self, forCellReuseIdentifier: cellId)
-
-        
         
     }
     
@@ -175,6 +185,7 @@ class SetupOrgParamsView: UIView, UITableViewDelegate, UITableViewDataSource, UI
         scrollView.addSubview(click2VoiceButton)
         scrollView.addSubview(click2VideoButton)
         
+
         tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50).isActive = true
         tableView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 50).isActive = true
@@ -184,11 +195,25 @@ class SetupOrgParamsView: UIView, UITableViewDelegate, UITableViewDataSource, UI
         click2VoiceButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50).isActive = true
         click2VoiceButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50).isActive = true
         click2VoiceButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-
+        
         click2VideoButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50).isActive = true
         click2VideoButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50).isActive = true
         click2VideoButton.topAnchor.constraint(equalTo: click2VoiceButton.bottomAnchor, constant: 50).isActive = true
         click2VideoButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        
+    }
+    
+    
+    func initCustomerName(name: String) {
+        GENESYS_CLOUD_INIT_PARAMS_LIVE[0] = name
+        GENESYS_CLOUD_INIT_PARAMS_STAGING[0] = name
+        
+        if self.environment == .live {
+            initParams = GENESYS_CLOUD_INIT_PARAMS_LIVE
+        } else if self.environment == .staging {
+            initParams = GENESYS_CLOUD_INIT_PARAMS_STAGING
+        }
         
     }
     
@@ -197,13 +222,14 @@ class SetupOrgParamsView: UIView, UITableViewDelegate, UITableViewDataSource, UI
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return NUM_ROWS
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? ParamsCell {
             let item = indexPath.item
             cell.textField.placeholder = placeholderArray[item]
             if initParams.count == 7 {
-                if let txt = initParams[item] as? String {
+                let txt = initParams[item]
+                if !txt.isEmpty {
                     cell.textField.text = txt
                 }
             } else {
@@ -212,19 +238,16 @@ class SetupOrgParamsView: UIView, UITableViewDelegate, UITableViewDataSource, UI
             cell.textField.delegate = self
             let iconName = iconNameArray[item]
 
-            cell.passImageView.image = UIImage(named: iconName)!.withRenderingMode(.alwaysTemplate)
+            cell.passImageView.image = UIImage(systemName: iconName)!.withRenderingMode(.alwaysTemplate)
             cell.selectionStyle = .none
-            if item != 0 {
-                cell.textField.isUserInteractionEnabled = false
-            }
             return cell
         } else {
             return UITableViewCell()
         }
     }
-
-
-
+    
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? ParamsCell {
             cell.textField.becomeFirstResponder()
@@ -253,8 +276,6 @@ class SetupOrgParamsView: UIView, UITableViewDelegate, UITableViewDataSource, UI
 
 class ParamsCell: UITableViewCell {
     
-    var userId: String?
-    var isUserHCP: Bool?
     
     let UITEXT_FIELD_HEIGTH: CGFloat = 44
     
@@ -338,4 +359,3 @@ class ParamsCell: UITableViewCell {
     
     
 }
-

@@ -191,8 +191,6 @@ class LanguageSelectionVC: UIViewController {
     
     
     fileprivate func selectLanguage(_ lang: String) {
-
-        print("selectedLanguage is \(lang)")
         L10n.shared.language = lang
         SetupService.instance.preferredLanguage = lang
         NotificationCenter.default.post(name: .L10nLanguageChanged, object: nil)
@@ -201,12 +199,8 @@ class LanguageSelectionVC: UIViewController {
             SetupService.instance.isNotFirstTimeUser = true
             let platformSelectionVC = UINavigationController(rootViewController: PlatformSelectionVC())
             window.rootViewController = platformSelectionVC
-
-            
         }
-        
 
-        
     }
     
     

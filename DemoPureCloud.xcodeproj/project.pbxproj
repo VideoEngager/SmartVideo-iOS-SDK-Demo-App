@@ -15,6 +15,7 @@
 		2D6AED982577836E00CCA15F /* NotificationInternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6AED972577836E00CCA15F /* NotificationInternetConnection.swift */; };
 		2D6AED9D2577C70C00CCA15F /* SetupOrgParamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6AED9C2577C70B00CCA15F /* SetupOrgParamsView.swift */; };
 		2D6AEDA22577E37100CCA15F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6AEDA12577E37100CCA15F /* UIViewControllerExtension.swift */; };
+		2D6B6047267CDBAF001E8B80 /* SetupOrgParamsEngageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B6046267CDBAF001E8B80 /* SetupOrgParamsEngageView.swift */; };
 		2DBF29362575B9BD00BF8537 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF29352575B9BD00BF8537 /* Constants.swift */; };
 		2DBF293C2575BBE500BF8537 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF293B2575BBE500BF8537 /* Helpers.swift */; };
 		2DBF294C2576775B00BF8537 /* LanguageSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF294B2576775B00BF8537 /* LanguageSelectionVC.swift */; };
@@ -44,6 +45,7 @@
 		2D6AED972577836E00CCA15F /* NotificationInternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationInternetConnection.swift; sourceTree = "<group>"; };
 		2D6AED9C2577C70B00CCA15F /* SetupOrgParamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupOrgParamsView.swift; sourceTree = "<group>"; };
 		2D6AEDA12577E37100CCA15F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		2D6B6046267CDBAF001E8B80 /* SetupOrgParamsEngageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupOrgParamsEngageView.swift; sourceTree = "<group>"; };
 		2DBF29352575B9BD00BF8537 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2DBF293B2575BBE500BF8537 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		2DBF294B2576775B00BF8537 /* LanguageSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionVC.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				2DCF54B8257588AF00E566C7 /* LaunchScreen.storyboard */,
 				2D6AED972577836E00CCA15F /* NotificationInternetConnection.swift */,
 				2D6AED9C2577C70B00CCA15F /* SetupOrgParamsView.swift */,
+				2D6B6046267CDBAF001E8B80 /* SetupOrgParamsEngageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				2D6AEDA22577E37100CCA15F /* UIViewControllerExtension.swift in Sources */,
 				2D6AED8E25769AC200CCA15F /* ImageExtensions.swift in Sources */,
 				2D6AED982577836E00CCA15F /* NotificationInternetConnection.swift in Sources */,
+				2D6B6047267CDBAF001E8B80 /* SetupOrgParamsEngageView.swift in Sources */,
 				2D6AED9D2577C70C00CCA15F /* SetupOrgParamsView.swift in Sources */,
 				2DBF293C2575BBE500BF8537 /* Helpers.swift in Sources */,
 				2DECDAEC25BA04F1006227C0 /* SetupOrgParamsGenericVC.swift in Sources */,
@@ -465,14 +469,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = SNXJNLUKY6;
 				INFOPLIST_FILE = DemoPureCloud/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.videoengager.smartvideodemoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -489,14 +493,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = SNXJNLUKY6;
 				INFOPLIST_FILE = DemoPureCloud/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.videoengager.smartvideodemoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

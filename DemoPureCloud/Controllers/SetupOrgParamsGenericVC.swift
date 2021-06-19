@@ -183,8 +183,6 @@ class SetupOrgParamsGenericVC: UIViewController {
         SmartVideo.connect(engine: engine, isVideo: true, lang: lang)
         
         
-        
-        
     }
     
     
@@ -244,7 +242,6 @@ class SetupOrgParamsGenericVC: UIViewController {
     
     
     @objc fileprivate func handleInternetConectionAvailable() {
-        print("Connected to internet")
         DispatchQueue.main.async {
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.click2VideoButton.layer.borderColor = UIColor.AppBackgroundColor.cgColor
@@ -260,7 +257,6 @@ class SetupOrgParamsGenericVC: UIViewController {
     
     
     @objc fileprivate func handleInternetConectionNotAvailable() {
-        print("NOT connected to internet")
         DispatchQueue.main.async {
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.click2VideoButton.layer.borderColor = UIColor.lightGray.cgColor
@@ -311,15 +307,15 @@ extension SetupOrgParamsGenericVC: SmartVideoDelegate {
     
     func isConnectedToInternet(isConnected: Bool) {
         if isConnected {
-            print("Mobile SDK is connected to internet")
+            debug("Connected to internet", level: .info, type: .generic)
         } else {
-            print("Mobile SDK is not connected to internet")
+            debug("Not connected to internet", level: .error, type: .generic)
         }
     }
     
     
     func errorHandler(error: SmartVideoError) {
-        print("SmartVideo Communication error. Error is: \(error)")
+        debug("SmartVideo Communication error. Error is: \(error)", level: .error, type: .generic)
         DispatchQueue.main.async {
             self.activityIndicator.stopAnimating()
             self.navigationController?.setNavigationBarHidden(false, animated: true)
@@ -336,7 +332,7 @@ extension SetupOrgParamsGenericVC: SmartVideoDelegate {
     
     
     func peerConnectionLost() {
-        print("Peer is no longer connected to the internet")
+        debug("Peer is no longer connected to the internet", level: .error, type: .generic)
     }
     
 }

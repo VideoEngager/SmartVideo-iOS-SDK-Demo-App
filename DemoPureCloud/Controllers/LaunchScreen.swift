@@ -89,18 +89,13 @@ class LaunchScreen: UIViewController {
     fileprivate func setupServices() {
         guard let isNotFirstTimeUser = SetupService.instance.isNotFirstTimeUser else { return }
         if (isNotFirstTimeUser) {
-            // print("Not a first time user")
             self.animateLogoBeforePushingNewController(completion: { (_) in
                 if let window = self.view.window {
                     let platformSelectionVC = UINavigationController(rootViewController: PlatformSelectionVC())
                     window.rootViewController = platformSelectionVC
                 }
-                
-                
-                
             })
         } else {
-            // print("First time user")
             self.animateLogoBeforePushingNewController(completion: { (_) in
                 if let window = self.view.window {
                     window.rootViewController = LanguageSelectionVC()

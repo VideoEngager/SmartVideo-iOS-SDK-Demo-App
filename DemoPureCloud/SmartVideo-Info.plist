@@ -64,6 +64,22 @@
 			<key>Deployment ID</key>
 			<string>973f8326-c601-40c6-82ce-b87e6dafef1c</string>
 		</dict>
+		<dict>
+			<key>SmartVideo URL</key>
+			<string>videome.leadsecure.com</string>
+			<key>Environment</key>
+			<string>live</string>
+			<key>Engine</key>
+			<string>genesysEngage</string>
+			<key>Service Name</key>
+			<string></string>
+			<key>Server Base URL</key>
+			<string></string>
+			<key>Agent URL</key>
+			<string></string>
+			<key>Authorization Value</key>
+			<string></string>
+		</dict>
 	</array>
 </dict>
 </plist>

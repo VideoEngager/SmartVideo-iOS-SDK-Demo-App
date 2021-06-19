@@ -1,6 +1,0 @@
-framework module SmartVideo {
-  umbrella header "SmartVideo-umbrella.h"
-
-  export *
-  module * { export * }
-}

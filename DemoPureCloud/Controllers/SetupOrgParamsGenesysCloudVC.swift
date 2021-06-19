@@ -9,10 +9,12 @@
 import UIKit
 import AVKit
 import SmartVideo
-import L10n_swift
 
 
 class SetupOrgParamsGenesysCloudVC: UIViewController {
+    
+    // default name
+    let customerName = "Mobile Tester"
     
 
     lazy var setupOrgParamsView: SetupOrgParamsView = {
@@ -24,9 +26,8 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
     
     let envSwitch: UISwitch = {
         let sv = UISwitch()
-        sv.isOn = true
         sv.setOn(true, animated: true)
-        sv.isOn = false
+        sv.isOn = false // prod server by default
         return sv
     }()
     
@@ -84,6 +85,7 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
         titleLabel.font = UIFont.systemFont(ofSize: 18)
         titleLabel.textColor = UIColor.AppBackgroundColor
         
+        setupOrgParamsView.initCustomerName(name: customerName)
         let isStaging: Bool = envSwitch.isOn
         if isStaging {
             setupOrgParamsView.environment = .staging
@@ -192,7 +194,6 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
         
         SmartVideo.delegate = self
         
-        
     }
 
     
@@ -200,23 +201,33 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
     @objc fileprivate func click2VideoButtonDidTap() {
         
         self.disableConnect()
-        activityIndicator.startAnimating()
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            self.maskView.alpha = 1
-        }, completion: nil)
-        
-        var displayName = "Mobile Test User"
-        let indexPath = IndexPath(item: 0, section: 0)
-        if let cell = setupOrgParamsView.tableView.cellForRow(at: indexPath) as? ParamsCell {
-            displayName = cell.textField.text ?? "Mobile Test User"
+        self.hasVideo = true
+        let isCallAllowed = checkAndFetchMostRecentParams()
+        if isCallAllowed {
+            activityIndicator.startAnimating()
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                self.maskView.alpha = 1
+            }, completion: nil)
+            
+            let displayName = setupOrgParamsView.initParams[0]
+            let environment = setupOrgParamsView.environment
+            
+            // Required ONLY if SmartVideo config params need to be editable from inside host/demo app.
+            var engineUrl = "videome.videoengager.com"
+            if environment == .staging {
+                engineUrl = "videome-staging.videoengager.com"
+            }
+            Genesys.shared.updateConfiguration(configuration: GenesysConfigurations(environment: environment, organizationID: setupOrgParamsView.initParams[1], deploymentID: setupOrgParamsView.initParams[2], shortUrl: setupOrgParamsView.initParams[3], tenantId: setupOrgParamsView.initParams[4], environmentURL: setupOrgParamsView.initParams[5], queue: setupOrgParamsView.initParams[6], engineUrl: engineUrl))
+            
+            let engine = GenesysEngine(environment: environment, displayName: displayName)
+            let lang = SetupService.instance.preferredLanguage ?? "en_US"
+            SmartVideo.connect(engine: engine, isVideo: self.hasVideo, lang: lang)
+            
+        } else {
+            let errMsg = "param_error_message".l10n()
+            self.showErrorMessage(errorMessage: errMsg)
         }
-        let environment = setupOrgParamsView.environment
-        let engine = GenesysEngine(environment: environment, displayName: displayName)
-        let lang = SetupService.instance.preferredLanguage ?? "en_US"
-        SmartVideo.connect(engine: engine, isVideo: true, lang: lang)
-        
-        
         
     }
     
@@ -225,24 +236,85 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
         
         self.disableConnect()
         self.hasVideo = false
-        
-        activityIndicator.startAnimating()
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            self.maskView.alpha = 1
-        }, completion: nil)
-        
-        var displayName = "Mobile Test User"
-        let indexPath = IndexPath(item: 0, section: 0)
-        if let cell = setupOrgParamsView.tableView.cellForRow(at: indexPath) as? ParamsCell {
-            displayName = cell.textField.text ?? "Mobile Test User"
+        let isCallAllowed = checkAndFetchMostRecentParams()
+        if isCallAllowed {
+            activityIndicator.startAnimating()
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                self.maskView.alpha = 1
+            }, completion: nil)
+            
+            let displayName = setupOrgParamsView.initParams[0]
+            let environment = setupOrgParamsView.environment
+            
+            // Required ONLY if SmartVideo config params need to be editable from inside host/demo app.
+            var engineUrl = "videome.videoengager.com"
+            if environment == .staging {
+                engineUrl = "videome-staging.videoengager.com"
+            }
+            Genesys.shared.updateConfiguration(configuration: GenesysConfigurations(environment: environment, organizationID: setupOrgParamsView.initParams[1], deploymentID: setupOrgParamsView.initParams[2], shortUrl: setupOrgParamsView.initParams[3], tenantId: setupOrgParamsView.initParams[4], environmentURL: setupOrgParamsView.initParams[5], queue: setupOrgParamsView.initParams[6], engineUrl: engineUrl))
+            
+            let engine = GenesysEngine(environment: environment, displayName: displayName)
+            let lang = SetupService.instance.preferredLanguage ?? "en_US"
+            SmartVideo.connect(engine: engine, isVideo: self.hasVideo, lang: lang)
+            
+        } else {
+            let errMsg = "param_error_message".l10n()
+            self.showErrorMessage(errorMessage: errMsg)
         }
-        let environment = setupOrgParamsView.environment
-        let engine = GenesysEngine(environment: environment, displayName: displayName)
-        let lang = SetupService.instance.preferredLanguage ?? "en_US"
-        SmartVideo.connect(engine: engine, isVideo: false, lang: lang)
         
     
+    }
+    
+    
+    fileprivate func checkAndFetchMostRecentParams() -> Bool {
+        
+        var isAllowedToPlaceCall: Bool = true
+        for i in 0...setupOrgParamsView.NUM_ROWS-1 {
+            let indexPath = IndexPath(item: i, section: 0)
+            guard let cell: ParamsCell = setupOrgParamsView.tableView.cellForRow(at: indexPath) as? ParamsCell else { return false }
+            if let text = cell.textField.text {
+                if !text.isEmpty {
+                    if i == 0 {
+                        setupOrgParamsView.initParams[0] = text
+                    } else if i == 1 {
+                        setupOrgParamsView.initParams[1] = text
+                    } else if i == 2 {
+                        setupOrgParamsView.initParams[2] = text
+                    } else if i == 3 {
+                        setupOrgParamsView.initParams[3] = text
+                    } else if i == 4 {
+                        setupOrgParamsView.initParams[4] = text
+                    } else if i == 5 {
+                        setupOrgParamsView.initParams[5] = text
+                    } else if i == 6 {
+                        setupOrgParamsView.initParams[6] = text
+                    }
+                } else {
+                    if i != setupOrgParamsView.NUM_ROWS - 1 {
+                        isAllowedToPlaceCall = false
+                    }
+                }
+            } else {
+                if i != setupOrgParamsView.NUM_ROWS - 1 {
+                    isAllowedToPlaceCall = false
+                }
+            }
+        }
+        return isAllowedToPlaceCall
+        
+    }
+    
+    
+    fileprivate func showErrorMessage(errorMessage: String) {
+        let alertController: UIAlertController = UIAlertController(title: "param_error_title".l10n(), message: errorMessage, preferredStyle: .alert)
+        let action: UIAlertAction = UIAlertAction(title: "param_error_button".l10n(), style: .default) { (_) -> Void in
+            self.enableConnect()
+        }
+        alertController.addAction(action)
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     
@@ -347,15 +419,15 @@ extension SetupOrgParamsGenesysCloudVC: SmartVideoDelegate {
     
     func isConnectedToInternet(isConnected: Bool) {
         if isConnected {
-            print("Mobile SDK is connected to internet")
+            debug("Connected to internet", level: .info, type: .genesys)
         } else {
-            print("Mobile SDK is not connected to internet")
+            debug("Not connected to internet", level: .error, type: .genesys)
         }
     }
     
     
     func errorHandler(error: SmartVideoError) {
-        print("SmartVideo Communication error. Error is: \(error)")
+        debug("SmartVideo Communication error. Error is: \(error)", level: .error, type: .genesys)
         DispatchQueue.main.async {
             self.activityIndicator.stopAnimating()
             self.navigationController?.setNavigationBarHidden(false, animated: true)
@@ -372,9 +444,6 @@ extension SetupOrgParamsGenesysCloudVC: SmartVideoDelegate {
     
     
     func peerConnectionLost() {
-        print("Peer is no longer connected to the internet")
+        debug("Peer is no longer connected to the internet", level: .error, type: .genesys)
     }
 }
-
-
-

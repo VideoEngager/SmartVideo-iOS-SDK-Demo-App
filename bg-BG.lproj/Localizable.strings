@@ -5,7 +5,8 @@
   Copyright © 2021 VideoEngager. All rights reserved.
   
 */
-"app_version" = "Версия";
+"app_version" = "App версия";
+"sdk_version" = "SDK версия";
 "backButtonItem" = "Назад";
 
 "staging_server" = "Staging Сървър";
@@ -22,7 +23,22 @@
 "genesys_cloud_queue" = "Genesys PureCloud Queue";
 
 
+"server_url" = "Сървър URL";
+"agent_url" = "Агент URL";
+"first_namr" = "Име";
+"last_name" = "Фамилия";
+"email" = "Имейл";
+"subject" = "Относно";
+"service_name" = "Име на услугата";
+"authorization_value" = "Стойност за ауторизация";
+
+
 "config_params_error_title" = "Грешка";
 "config_params_error_message" = "Има грешка във Вашите конфигурационни параметри. Повечето от тях се конфигурират чрез plist файл Smart Video. Моля, проверете коректността на plist файла и неговите параметри.";
 "config_params_error_action" = "Добре";
+
+
+"param_error_title" = "Конфигурационна грешка";
+"param_error_message" = "Един или повече задължителни параметри не са предоставени и следователно не можем да изпълним заявката ви.";
+"param_error_button" = "Ok";
 

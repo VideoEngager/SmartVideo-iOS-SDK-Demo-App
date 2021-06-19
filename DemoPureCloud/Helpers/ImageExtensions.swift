@@ -17,11 +17,8 @@ extension UIImageView {
             self.layer.borderWidth = 0
             self.layer.borderColor = UIColor.clear.cgColor
         }
-        // self.layer.cornerRadius = HCP_ICON_WIDTH / 2
         self.layer.cornerRadius = cornerRadius
         self.clipsToBounds = true
-        // self.layer.applyRoundCornerMaskForAllCornersWith(radius: cornerRadius)
-        
     }
 
 }

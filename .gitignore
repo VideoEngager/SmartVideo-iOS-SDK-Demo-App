@@ -60,3 +60,9 @@ xcuserdata/
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
+
+
+Pods/
+Pods/L10n-swift/README.md
+Pods/L10n-swift/Source/Core/L10n.swift
+Pods/L10n-swift/Source/Extensions/String+Localizable.swift

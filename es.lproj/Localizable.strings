@@ -5,7 +5,8 @@
   Copyright © 2021 VideoEngager. All rights reserved.
   
 */
-"app_version" = "Versión";
+"app_version" = "App versión";
+"sdk_version" = "SDK versión";
 "backButtonItem" = "Back";
 
 "staging_server" = "Staging Servidor";
@@ -22,7 +23,22 @@
 "genesys_cloud_queue" = "Genesys PureCloud Queue";
 
 
+"server_url" = "URL del servidor";
+"agent_url" = "URL del agente";
+"first_namr" = "Primer nombre";
+"last_name" = "Apellido";
+"email" = "Correo electrónico";
+"subject" = "Sujeto";
+"service_name" = "Nombre del Servicio";
+"authorization_value" = "Valor de autorización";
+
+
 "config_params_error_title" = "Error";
 "config_params_error_message" = "Hay un error en sus parámetros de configuración. La mayoría de ellos se configuran a través del archivo plist de Smart Video. Valide la exactitud del archivo plist y sus parámetros.";
 "config_params_error_action" = "Multa";
+
+
+"param_error_title" = "Error de configuración";
+"param_error_message" = "No se proporcionan uno o más parámetros obligatorios y, por lo tanto, no podemos atender su solicitud.";
+"param_error_button" = "Ok";
 

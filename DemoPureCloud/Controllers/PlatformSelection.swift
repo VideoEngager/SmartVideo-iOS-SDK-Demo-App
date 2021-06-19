@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import L10n_swift
 
 
 class PlatformSelectionVC: UIViewController {
@@ -60,6 +59,19 @@ class PlatformSelectionVC: UIViewController {
     
     
     private let appCurrentVersionLabel: UILabel = {
+        let nl = UILabel()
+        nl.translatesAutoresizingMaskIntoConstraints = false
+        nl.backgroundColor? = UIColor.clear
+        nl.textColor = UIColor.AppBackgroundColor
+        nl.font = UIFont.systemFont(ofSize: 14)
+        nl.numberOfLines = 0
+        nl.textAlignment = .left
+        nl.sizeToFit()
+        return nl
+    }()
+    
+    
+    private let sdkCurrentVersionLabel: UILabel = {
         let nl = UILabel()
         nl.translatesAutoresizingMaskIntoConstraints = false
         nl.backgroundColor? = UIColor.clear
@@ -130,6 +142,10 @@ class PlatformSelectionVC: UIViewController {
             appCurrentVersionLabel.text = "app_version".l10n() + " " + appVersion
         }
         
+        let sdkVersion = "1.2.1"
+        sdkCurrentVersionLabel.text = "sdk_version".l10n() + " " + sdkVersion
+    
+        
     }
     
     
@@ -140,6 +156,7 @@ class PlatformSelectionVC: UIViewController {
         view.addSubview(genesysEngageButton)
         view.addSubview(copyrightText)
         view.addSubview(appCurrentVersionLabel)
+        view.addSubview(sdkCurrentVersionLabel)
         
         genesysCloudButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         genesysCloudButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
@@ -167,6 +184,11 @@ class PlatformSelectionVC: UIViewController {
         appCurrentVersionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         appCurrentVersionLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         appCurrentVersionLabel.centerYAnchor.constraint(equalTo: copyrightText.centerYAnchor).isActive = true
+        
+        
+        sdkCurrentVersionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        sdkCurrentVersionLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        sdkCurrentVersionLabel.bottomAnchor.constraint(equalTo: appCurrentVersionLabel.topAnchor).isActive = true
         
         
     }
