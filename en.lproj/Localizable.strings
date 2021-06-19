@@ -18,6 +18,7 @@
 "org_id" = "Organization Id";
 "deployment_id" = "Deployment Id";
 "ve_url" = "VideoEngager URL";
+"agent_shortUrl" = "Short URL";
 "tenant_id" = "Tenant Id";
 "env" = "Environment";
 "genesys_cloud_queue" = "Genesys PureCloud Queue";
