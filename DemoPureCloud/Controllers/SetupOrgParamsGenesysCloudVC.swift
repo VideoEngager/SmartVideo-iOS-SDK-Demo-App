@@ -13,8 +13,10 @@ import SmartVideo
 
 class SetupOrgParamsGenesysCloudVC: UIViewController {
     
-    // default name
-    let customerName = "Mobile Tester"
+    // default names
+    let customerFirstName = "Mobile"
+    let customerLastName =  "Tester"
+    var customerName = String()
     
 
     lazy var setupOrgParamsView: SetupOrgParamsView = {
@@ -85,6 +87,8 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
         titleLabel.font = UIFont.systemFont(ofSize: 18)
         titleLabel.textColor = UIColor.AppBackgroundColor
         
+        
+        customerName = customerFirstName + " " + customerLastName
         setupOrgParamsView.initCustomerName(name: customerName)
         let isStaging: Bool = envSwitch.isOn
         if isStaging {
@@ -210,17 +214,36 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
                 self.maskView.alpha = 1
             }, completion: nil)
             
-            let displayName = setupOrgParamsView.initParams[0]
             let environment = setupOrgParamsView.environment
             
             // Required ONLY if SmartVideo config params need to be editable from inside host/demo app.
             var engineUrl = "videome.videoengager.com"
             if environment == .staging {
-                engineUrl = "videome-staging.videoengager.com"
+                engineUrl = "staging.videoengager.com"
             }
             Genesys.shared.updateConfiguration(configuration: GenesysConfigurations(environment: environment, organizationID: setupOrgParamsView.initParams[1], deploymentID: setupOrgParamsView.initParams[2], shortUrl: setupOrgParamsView.initParams[3], tenantId: setupOrgParamsView.initParams[4], environmentURL: setupOrgParamsView.initParams[5], queue: setupOrgParamsView.initParams[6], engineUrl: engineUrl))
             
-            let engine = GenesysEngine(environment: environment, displayName: displayName)
+            
+            let avatarImageUrl = "https://my_avatar_image_url"
+            let urlClient = "https://my_url_client"
+            let videocall_flag = true
+            let audioonlycall_flag = false
+            let chatonly_flag = false
+            
+            
+            let customFields = ["firstName": customerFirstName,
+                                "lastName": customerLastName,
+                                "urlclient": urlClient,
+                                "videocall": videocall_flag,
+                                "audioonlycall": audioonlycall_flag,
+                                "chatonly": chatonly_flag] as [String : Any]
+            let memberInfo = ["displayName": customerName,
+                              "avatarImageUrl": avatarImageUrl,
+                              "customFields": customFields] as [String : Any]
+            
+
+            
+            let engine = GenesysEngine(environment: environment, memberInfo: memberInfo)
             let lang = SetupService.instance.preferredLanguage ?? "en_US"
             SmartVideo.connect(engine: engine, isVideo: self.hasVideo, lang: lang)
             
@@ -250,11 +273,30 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
             // Required ONLY if SmartVideo config params need to be editable from inside host/demo app.
             var engineUrl = "videome.videoengager.com"
             if environment == .staging {
-                engineUrl = "videome-staging.videoengager.com"
+                engineUrl = "staging.videoengager.com"
             }
             Genesys.shared.updateConfiguration(configuration: GenesysConfigurations(environment: environment, organizationID: setupOrgParamsView.initParams[1], deploymentID: setupOrgParamsView.initParams[2], shortUrl: setupOrgParamsView.initParams[3], tenantId: setupOrgParamsView.initParams[4], environmentURL: setupOrgParamsView.initParams[5], queue: setupOrgParamsView.initParams[6], engineUrl: engineUrl))
             
-            let engine = GenesysEngine(environment: environment, displayName: displayName)
+            let avatarImageUrl = "https://my_avatar_image_url"
+            let urlClient = "https://my_url_client"
+            let videocall_flag = false
+            let audioonlycall_flag = true
+            let chatonly_flag = false
+            
+            
+            let customFields = ["firstName": customerFirstName,
+                                "lastName": customerLastName,
+                                "urlclient": urlClient,
+                                "videocall": videocall_flag,
+                                "audioonlycall": audioonlycall_flag,
+                                "chatonly": chatonly_flag] as [String : Any]
+            let memberInfo = ["displayName": customerName,
+                              "avatarImageUrl": avatarImageUrl,
+                              "customFields": customFields] as [String : Any]
+            
+
+            
+            let engine = GenesysEngine(environment: environment, memberInfo: memberInfo)
             let lang = SetupService.instance.preferredLanguage ?? "en_US"
             SmartVideo.connect(engine: engine, isVideo: self.hasVideo, lang: lang)
             

@@ -1,22 +1,22 @@
 PODS:
   - GoogleWebRTC (1.1.31999)
-  - L10n-swift (5.9.0):
-    - L10n-swift/Core (= 5.9.0)
-    - L10n-swift/Extension (= 5.9.0)
-    - L10n-swift/IBInspectable (= 5.9.0)
-  - L10n-swift/Core (5.9.0)
-  - L10n-swift/Extension (5.9.0):
+  - L10n-swift (5.10.0):
+    - L10n-swift/Core (= 5.10.0)
+    - L10n-swift/Extension (= 5.10.0)
+    - L10n-swift/IBInspectable (= 5.10.0)
+  - L10n-swift/Core (5.10.0)
+  - L10n-swift/Extension (5.10.0):
     - L10n-swift/Core
-  - L10n-swift/IBInspectable (5.9.0):
+  - L10n-swift/IBInspectable (5.10.0):
     - L10n-swift/Core
   - ShimmerSwift (2.1.1)
-  - SmartVideo (1.2.0):
+  - SmartVideo (1.3.0):
     - GoogleWebRTC
 
 DEPENDENCIES:
   - L10n-swift (~> 5.8)
   - ShimmerSwift
-  - SmartVideo (~> 1.2.0)
+  - SmartVideo (~> 1.3.0)
 
 SPEC REPOS:
   trunk:
@@ -27,10 +27,10 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   GoogleWebRTC: b39a78c4f5cc6b0323415b9233db03a2faa7b0f0
-  L10n-swift: fc27d8eb0932b8b893d3c6d936bf157e3af6bd14
+  L10n-swift: 4674994a2783577bd90ed80775e7526bcae3da1e
   ShimmerSwift: f7ed2daf9c246de8299dfd9e12c6ab465cba9842
-  SmartVideo: d1ea03f93f640b7550e9c46c45df1834a1337378
+  SmartVideo: 2247294e0a86650df570f4b0219cda032da38661
 
-PODFILE CHECKSUM: ef6b28654c16186f91081842948da1aefec4fba4
+PODFILE CHECKSUM: 857cc074edf1fcca8709bcda441f765b112bbb7c
 
 COCOAPODS: 1.10.1

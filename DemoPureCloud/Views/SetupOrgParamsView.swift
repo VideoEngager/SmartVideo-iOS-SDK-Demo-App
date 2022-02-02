@@ -289,8 +289,9 @@ class ParamsCell: UITableViewCell {
         pf.layer.borderWidth = 1
         pf.tintColor = UIColor.AppBackgroundColor
         pf.textAlignment = .center
-        pf.backgroundColor = UIColor.clear
+        pf.backgroundColor = UIColor.white
         pf.font = UIFont.systemFont(ofSize: 14)
+        pf.textColor = UIColor.AppBackgroundColor
         pf.keyboardType = .default
         pf.keyboardAppearance = .default
         pf.isSecureTextEntry = false
@@ -304,7 +305,7 @@ class ParamsCell: UITableViewCell {
         
     let passImageView: UIImageView = {
         let iv = UIImageView(frame: CGRect(x: 15, y: 0, width: 16, height: 21))
-        iv.tintColor = UIColor.lightGray
+        iv.tintColor = UIColor.AppBackgroundColor
         iv.contentMode = .scaleAspectFill
         return iv
     }()
@@ -329,6 +330,7 @@ class ParamsCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        self.backgroundColor = .white
         setupViews()
         
         
