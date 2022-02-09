@@ -8,7 +8,7 @@ target 'DemoPureCloud' do
   # Pods for DemoPureCloud
   pod 'ShimmerSwift'
   pod 'L10n-swift', '~> 5.8'
-  pod 'SmartVideo', '~> 1.3.0'
+  pod 'SmartVideo', '~> 1.3.4'
 end
 
 

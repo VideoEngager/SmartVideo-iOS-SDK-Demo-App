@@ -49,7 +49,7 @@ class PlatformSelectionVC: UIViewController {
         nl.translatesAutoresizingMaskIntoConstraints = false
         nl.backgroundColor? = UIColor.clear
         nl.textColor = UIColor.AppBackgroundColor
-        nl.text = "© 2021 VideoEngager Inc."
+        nl.text = "© 2022 VideoEngager, Inc."
         nl.font = UIFont.systemFont(ofSize: 14)
         nl.numberOfLines = 0
         nl.textAlignment = .right
@@ -142,7 +142,7 @@ class PlatformSelectionVC: UIViewController {
             appCurrentVersionLabel.text = "app_version".l10n() + " " + appVersion
         }
         
-        let sdkVersion = "1.3.0"
+        let sdkVersion = "1.3.4"
         sdkCurrentVersionLabel.text = "sdk_version".l10n() + " " + sdkVersion
     
         

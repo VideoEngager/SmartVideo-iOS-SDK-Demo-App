@@ -243,7 +243,7 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
             
 
             
-            let engine = GenesysEngine(environment: environment, memberInfo: memberInfo)
+            let engine = GenesysEngine(environment: environment, isVideo: self.hasVideo, memberInfo: memberInfo)
             let lang = SetupService.instance.preferredLanguage ?? "en_US"
             SmartVideo.connect(engine: engine, isVideo: self.hasVideo, lang: lang)
             
@@ -267,7 +267,6 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
                 self.maskView.alpha = 1
             }, completion: nil)
             
-            let displayName = setupOrgParamsView.initParams[0]
             let environment = setupOrgParamsView.environment
             
             // Required ONLY if SmartVideo config params need to be editable from inside host/demo app.
@@ -296,7 +295,7 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
             
 
             
-            let engine = GenesysEngine(environment: environment, memberInfo: memberInfo)
+            let engine = GenesysEngine(environment: environment, isVideo: self.hasVideo, allowVisitorToSwitchAudioCallToVideoCall: false, memberInfo: memberInfo)
             let lang = SetupService.instance.preferredLanguage ?? "en_US"
             SmartVideo.connect(engine: engine, isVideo: self.hasVideo, lang: lang)
             
