@@ -57,6 +57,7 @@
 		2DCF54B6257588AF00E566C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DCF54B9257588AF00E566C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DCF54BB257588AF00E566C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DDE64BC27B57F7E00CCF484 /* sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.mp4; sourceTree = "<group>"; };
 		2DECDAD425B9FF07006227C0 /* PlatformSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSelection.swift; sourceTree = "<group>"; };
 		2DECDADC25BA02CA006227C0 /* SetupOrgParamsGenesysEngageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupOrgParamsGenesysEngageVC.swift; sourceTree = "<group>"; };
 		2DECDAEB25BA04F1006227C0 /* SetupOrgParamsGenericVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupOrgParamsGenericVC.swift; sourceTree = "<group>"; };
@@ -146,6 +147,7 @@
 		2DCF54A9257588AA00E566C7 /* DemoPureCloud */ = {
 			isa = PBXGroup;
 			children = (
+				2DDE64BB27B57E1000CCF484 /* Assets */,
 				2DBF29432576757300BF8537 /* Controllers */,
 				2DCF54B6257588AF00E566C7 /* Assets.xcassets */,
 				2DBF29472576758200BF8537 /* Views */,
@@ -156,6 +158,14 @@
 				2D080B1A257937C200D96FCA /* Services */,
 			);
 			path = DemoPureCloud;
+			sourceTree = "<group>";
+		};
+		2DDE64BB27B57E1000CCF484 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2DDE64BC27B57F7E00CCF484 /* sample.mp4 */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		7BFA2BDF80BD9159BC593A55 /* Pods */ = {

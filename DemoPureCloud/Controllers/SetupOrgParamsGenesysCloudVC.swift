@@ -242,8 +242,10 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
                               "customFields": customFields] as [String : Any]
             
 
+            let securityCodeText: String = "Your security code is: 7757"
+            let customSettings = ["securityCode": securityCodeText] as [String : Any]
             
-            let engine = GenesysEngine(environment: environment, isVideo: self.hasVideo, memberInfo: memberInfo)
+            let engine = GenesysEngine(environment: environment, isVideo: self.hasVideo, customSettings: customSettings, memberInfo: memberInfo)
             let lang = SetupService.instance.preferredLanguage ?? "en_US"
             SmartVideo.connect(engine: engine, isVideo: self.hasVideo, lang: lang)
             
@@ -295,7 +297,12 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
             
 
             
-            let engine = GenesysEngine(environment: environment, isVideo: self.hasVideo, allowVisitorToSwitchAudioCallToVideoCall: false, memberInfo: memberInfo)
+            let securityCodeText: String = "Your security code is: 7917"
+            let customSettings = ["allowVisitorToSwitchAudioCallToVideoCall": false,
+                              "securityCode": securityCodeText] as [String : Any]
+
+            
+            let engine = GenesysEngine(environment: environment, isVideo: self.hasVideo, customSettings: customSettings, memberInfo: memberInfo)
             let lang = SetupService.instance.preferredLanguage ?? "en_US"
             SmartVideo.connect(engine: engine, isVideo: self.hasVideo, lang: lang)
             
