@@ -243,7 +243,9 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
             
 
             let securityCodeText: String = "Your security code is: 7757"
-            let customSettings = ["securityCode": securityCodeText] as [String : Any]
+            let imgURL = "https://r1.ilikewallpaper.net/iphone-11-wallpapers/download/80032/Positano-Italy-iphone-11-wallpaper-ilikewallpaper_com.jpg"
+            let customSettings = ["securityCode": securityCodeText,
+                                  "backgroundImageURL": imgURL] as [String : Any]
             
             let engine = GenesysEngine(environment: environment, isVideo: self.hasVideo, customSettings: customSettings, memberInfo: memberInfo)
             let lang = SetupService.instance.preferredLanguage ?? "en_US"
@@ -298,8 +300,10 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
 
             
             let securityCodeText: String = "Your security code is: 7917"
+            let imgURL = "https://r1.ilikewallpaper.net/iphone-11-wallpapers/download/80032/Positano-Italy-iphone-11-wallpaper-ilikewallpaper_com.jpg"
             let customSettings = ["allowVisitorToSwitchAudioCallToVideoCall": false,
-                              "securityCode": securityCodeText] as [String : Any]
+                                  "securityCode": securityCodeText,
+                                  "backgroundImageURL": imgURL] as [String : Any]
 
             
             let engine = GenesysEngine(environment: environment, isVideo: self.hasVideo, customSettings: customSettings, memberInfo: memberInfo)

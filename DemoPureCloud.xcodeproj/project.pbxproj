@@ -25,6 +25,7 @@
 		2DCF54B5257588AA00E566C7 /* DemoPureCloud.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF54B3257588AA00E566C7 /* DemoPureCloud.xcdatamodeld */; };
 		2DCF54B7257588AF00E566C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DCF54B6257588AF00E566C7 /* Assets.xcassets */; };
 		2DCF54BA257588AF00E566C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DCF54B8257588AF00E566C7 /* LaunchScreen.storyboard */; };
+		2DDE64C527B6632F00CCF484 /* sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2DDE64BC27B57F7E00CCF484 /* sample.mp4 */; };
 		2DECDAD525B9FF07006227C0 /* PlatformSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DECDAD425B9FF07006227C0 /* PlatformSelection.swift */; };
 		2DECDADD25BA02CA006227C0 /* SetupOrgParamsGenesysEngageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DECDADC25BA02CA006227C0 /* SetupOrgParamsGenesysEngageVC.swift */; };
 		2DECDAEC25BA04F1006227C0 /* SetupOrgParamsGenericVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DECDAEB25BA04F1006227C0 /* SetupOrgParamsGenericVC.swift */; };
@@ -252,6 +253,7 @@
 				2D252D8C25C975EF00A5F77B /* Localizable.strings in Resources */,
 				2DCF54B7257588AF00E566C7 /* Assets.xcassets in Resources */,
 				4D50526C25B5CB9500567198 /* SmartVideo-Info.plist in Resources */,
+				2DDE64C527B6632F00CCF484 /* sample.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
