@@ -301,12 +301,16 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
             
             let securityCodeText: String = "Your security code is: 7917"
             let imgURL = "https://r1.ilikewallpaper.net/iphone-11-wallpapers/download/80032/Positano-Italy-iphone-11-wallpaper-ilikewallpaper_com.jpg"
+            
+            let outgoingCallVC = ["hideAvatar": true,
+                                  "hideName": true] as [String : Any]
             let customSettings = ["allowVisitorToSwitchAudioCallToVideoCall": false,
                                   "securityCode": securityCodeText,
-                                  "backgroundImageURL": imgURL] as [String : Any]
+                                  "backgroundImageURL": imgURL,
+                                  "outgoingCallVC": outgoingCallVC] as [String : Any]
 
             
-            let engine = GenesysEngine(environment: environment, isVideo: self.hasVideo, customSettings: customSettings, memberInfo: memberInfo)
+            let engine = GenesysEngine(environment: .live, isVideo: self.hasVideo, customSettings: customSettings, memberInfo: memberInfo)
             let lang = SetupService.instance.preferredLanguage ?? "en_US"
             SmartVideo.connect(engine: engine, isVideo: self.hasVideo, lang: lang)
             

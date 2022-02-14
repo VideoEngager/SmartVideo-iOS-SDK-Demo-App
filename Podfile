@@ -8,7 +8,7 @@ target 'DemoPureCloud' do
   # Pods for DemoPureCloud
   pod 'ShimmerSwift'
   pod 'L10n-swift', '~> 5.8'
-  pod 'SmartVideo', '~> 1.5.0'
+  pod 'SmartVideo', '~> 1.6.0'
   # pod 'SmartVideo', :git => 'https://github.com/VideoEngager/SmartVideo-iOS-SDK', :branch => "development"
 end
 
