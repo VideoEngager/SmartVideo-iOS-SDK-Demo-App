@@ -8,17 +8,6 @@
 import UIKit
 
 
-extension UIColor {
-    class var AppBackgroundColor: UIColor {
-        return UIColor(red: 57/255, green: 154/255, blue: 202/255, alpha: 1)
-    }
-
-    class var regularTextColor: UIColor {
-        return UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
-    }
-
-}
-
 // Callbacks
 typealias CompHandler = (_ success: Bool) -> ()
 

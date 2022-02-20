@@ -1,11 +1,41 @@
 //
-//  CALayerExtensions.swift
+//  ImageExtensions.swift
 //  DemoPureCloud
 //
 //  Copyright © 2021 VideoEngager. All rights reserved.
 //
 
 import UIKit
+
+
+extension UIColor {
+    class var AppBackgroundColor: UIColor {
+        return UIColor(red: 57/255, green: 154/255, blue: 202/255, alpha: 1)
+    }
+    
+    class var regularTextColor: UIColor {
+        return UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+    }
+
+}
+
+
+extension UIImageView {
+
+    func setRoundedImage(cornerRadius: CGFloat, border: Bool) {
+        if (border) {
+            self.layer.borderWidth = 1
+            self.layer.borderColor = UIColor(red: 144/255, green: 144/255, blue: 144/255, alpha: 0.2).cgColor
+        } else {
+            self.layer.borderWidth = 0
+            self.layer.borderColor = UIColor.clear.cgColor
+        }
+        self.layer.cornerRadius = cornerRadius
+        self.clipsToBounds = true
+    }
+
+}
+
 
 extension CALayer {
     
@@ -117,3 +147,34 @@ class Pulsing: CALayer {
     
     
 }
+
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    
+    func dismissKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+}
+
+
+
+extension String {
+    func canOpenUrl() -> Bool {
+        let regEx = "((https|http)://)((\\w|-)+)(([.]|[/])((\\w|-)+))+"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", argumentArray:[regEx])
+        return predicate.evaluate(with: self)
+    }
+}
+    
+    

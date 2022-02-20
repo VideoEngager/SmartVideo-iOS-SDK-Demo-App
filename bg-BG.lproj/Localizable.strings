@@ -13,6 +13,7 @@
 "prod_server" = "Prod Сървър";
 "start_audio_button" = "Стартиране на аудио";
 "start_video_button" = "Стартиране на видео";
+"start_chat_button" = "Стартиране на чат`";
 
 "customer_name" = "Име на клиент";
 "org_id" = "Organization Id";
@@ -42,4 +43,8 @@
 "param_error_title" = "Конфигурационна грешка";
 "param_error_message" = "Един или повече задължителни параметри не са предоставени и следователно не можем да изпълним заявката ви.";
 "param_error_button" = "Ok";
+
+
+"end_chat" = "Край чат";
+"type_message" = "Напиши нещо...";
 

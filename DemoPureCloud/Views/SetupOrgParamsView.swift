@@ -75,6 +75,20 @@ class SetupOrgParamsView: UIView, UITableViewDelegate, UITableViewDataSource, UI
         return lb
     }()
     
+    
+    let click2ChatButton: UIButton = {
+        let lb = UIButton()
+        lb.translatesAutoresizingMaskIntoConstraints = false
+        lb.layer.cornerRadius = 10
+        lb.layer.borderColor = UIColor.gray.cgColor
+        lb.backgroundColor = UIColor.gray
+        lb.setTitle("Start Chat", for: UIControl.State.normal)
+        lb.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        lb.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        lb.isEnabled = false
+        return lb
+    }()
+    
 
     var customer_name: String?
     var environment: Environment = .live
@@ -184,22 +198,30 @@ class SetupOrgParamsView: UIView, UITableViewDelegate, UITableViewDataSource, UI
         scrollView.addSubview(tableView)
         scrollView.addSubview(click2VoiceButton)
         scrollView.addSubview(click2VideoButton)
+        scrollView.addSubview(click2ChatButton)
         
 
         tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50).isActive = true
-        tableView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 50).isActive = true
+        tableView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20).isActive = true
         tableView.heightAnchor.constraint(equalToConstant: ENTRY_CELL_HEIGHT * CGFloat(NUM_ROWS)).isActive = true
         
-        click2VoiceButton.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 50).isActive = true
+        click2VoiceButton.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 30).isActive = true
         click2VoiceButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50).isActive = true
         click2VoiceButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50).isActive = true
         click2VoiceButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         click2VideoButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50).isActive = true
         click2VideoButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50).isActive = true
-        click2VideoButton.topAnchor.constraint(equalTo: click2VoiceButton.bottomAnchor, constant: 50).isActive = true
+        click2VideoButton.topAnchor.constraint(equalTo: click2VoiceButton.bottomAnchor, constant: 20).isActive = true
         click2VideoButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        
+        click2ChatButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50).isActive = true
+        click2ChatButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50).isActive = true
+        click2ChatButton.topAnchor.constraint(equalTo: click2VideoButton.bottomAnchor, constant: 20).isActive = true
+        click2ChatButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
         
         
     }

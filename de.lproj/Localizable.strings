@@ -13,6 +13,7 @@
 "prod_server" = "Prod Server";
 "start_audio_button" = "Starten Sie Audio";
 "start_video_button" = "Video starten";
+"start_chat_button" = "Chat beginnen";
 
 "customer_name" = "Kundenname";
 "org_id" = "Organization Id";
@@ -42,6 +43,10 @@
 "param_error_title" = "Konfigurationsfehler";
 "param_error_message" = "Ein oder mehrere obligatorische Parameter sind nicht angegeben und daher können wir Ihre Anfrage nicht bearbeiten.";
 "param_error_button" = "Ok";
+
+
+"end_chat" = "Ende";
+"type_message" = "Geben Sie eine Nachricht ein...";
 
 
 
