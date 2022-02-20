@@ -142,7 +142,7 @@ class PlatformSelectionVC: UIViewController {
             appCurrentVersionLabel.text = "app_version".l10n() + " " + appVersion
         }
         
-        let sdkVersion = "1.6.0"
+        let sdkVersion = "20220220.004907"
         sdkCurrentVersionLabel.text = "sdk_version".l10n() + " " + sdkVersion
     
         

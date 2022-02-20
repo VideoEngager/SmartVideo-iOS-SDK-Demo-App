@@ -10,11 +10,9 @@
 		2D252D8C25C975EF00A5F77B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D252D8E25C975EF00A5F77B /* Localizable.strings */; };
 		2D6AED7A25767C1200CCA15F /* SetupOrgParamsGenesysCloudVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6AED7925767C1200CCA15F /* SetupOrgParamsGenesysCloudVC.swift */; };
 		2D6AED7F25767DC400CCA15F /* SetupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6AED7E25767DC400CCA15F /* SetupService.swift */; };
-		2D6AED8E25769AC200CCA15F /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6AED8D25769AC200CCA15F /* ImageExtensions.swift */; };
-		2D6AED9325769B3000CCA15F /* CALayerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6AED9225769B3000CCA15F /* CALayerExtensions.swift */; };
+		2D6AED8E25769AC200CCA15F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6AED8D25769AC200CCA15F /* Extensions.swift */; };
 		2D6AED982577836E00CCA15F /* NotificationInternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6AED972577836E00CCA15F /* NotificationInternetConnection.swift */; };
 		2D6AED9D2577C70C00CCA15F /* SetupOrgParamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6AED9C2577C70B00CCA15F /* SetupOrgParamsView.swift */; };
-		2D6AEDA22577E37100CCA15F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6AEDA12577E37100CCA15F /* UIViewControllerExtension.swift */; };
 		2D6B6047267CDBAF001E8B80 /* SetupOrgParamsEngageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B6046267CDBAF001E8B80 /* SetupOrgParamsEngageView.swift */; };
 		2DBF29362575B9BD00BF8537 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF29352575B9BD00BF8537 /* Constants.swift */; };
 		2DBF293C2575BBE500BF8537 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF293B2575BBE500BF8537 /* Helpers.swift */; };
@@ -29,6 +27,8 @@
 		2DECDAD525B9FF07006227C0 /* PlatformSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DECDAD425B9FF07006227C0 /* PlatformSelection.swift */; };
 		2DECDADD25BA02CA006227C0 /* SetupOrgParamsGenesysEngageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DECDADC25BA02CA006227C0 /* SetupOrgParamsGenesysEngageVC.swift */; };
 		2DECDAEC25BA04F1006227C0 /* SetupOrgParamsGenericVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DECDAEB25BA04F1006227C0 /* SetupOrgParamsGenericVC.swift */; };
+		2DEEEA8427C1CB6A007A6D0A /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEEEA8327C1CB6A007A6D0A /* ChatVC.swift */; };
+		2DEEEA8627C1CB9C007A6D0A /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEEEA8527C1CB9C007A6D0A /* ChatView.swift */; };
 		4D50526C25B5CB9500567198 /* SmartVideo-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D50526B25B5CB9500567198 /* SmartVideo-Info.plist */; };
 		C1ADE01A36E2994BB879F293 /* Pods_DemoPureCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C2141202E9BF8155B84384 /* Pods_DemoPureCloud.framework */; };
 /* End PBXBuildFile section */
@@ -41,11 +41,9 @@
 		2D252D9525C9766600A5F77B /* bg-BG */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "bg-BG"; path = "bg-BG.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2D6AED7925767C1200CCA15F /* SetupOrgParamsGenesysCloudVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupOrgParamsGenesysCloudVC.swift; sourceTree = "<group>"; };
 		2D6AED7E25767DC400CCA15F /* SetupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupService.swift; sourceTree = "<group>"; };
-		2D6AED8D25769AC200CCA15F /* ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
-		2D6AED9225769B3000CCA15F /* CALayerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtensions.swift; sourceTree = "<group>"; };
+		2D6AED8D25769AC200CCA15F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2D6AED972577836E00CCA15F /* NotificationInternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationInternetConnection.swift; sourceTree = "<group>"; };
 		2D6AED9C2577C70B00CCA15F /* SetupOrgParamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupOrgParamsView.swift; sourceTree = "<group>"; };
-		2D6AEDA12577E37100CCA15F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		2D6B6046267CDBAF001E8B80 /* SetupOrgParamsEngageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupOrgParamsEngageView.swift; sourceTree = "<group>"; };
 		2DBF29352575B9BD00BF8537 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2DBF293B2575BBE500BF8537 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -62,6 +60,8 @@
 		2DECDAD425B9FF07006227C0 /* PlatformSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSelection.swift; sourceTree = "<group>"; };
 		2DECDADC25BA02CA006227C0 /* SetupOrgParamsGenesysEngageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupOrgParamsGenesysEngageVC.swift; sourceTree = "<group>"; };
 		2DECDAEB25BA04F1006227C0 /* SetupOrgParamsGenericVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupOrgParamsGenericVC.swift; sourceTree = "<group>"; };
+		2DEEEA8327C1CB6A007A6D0A /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		2DEEEA8527C1CB9C007A6D0A /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		3E6616C2EF0EC3317E5C8840 /* Pods-DemoPureCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoPureCloud.release.xcconfig"; path = "Target Support Files/Pods-DemoPureCloud/Pods-DemoPureCloud.release.xcconfig"; sourceTree = "<group>"; };
 		43C2141202E9BF8155B84384 /* Pods_DemoPureCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoPureCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D50526B25B5CB9500567198 /* SmartVideo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SmartVideo-Info.plist"; sourceTree = "<group>"; };
@@ -93,9 +93,7 @@
 			children = (
 				2DBF29352575B9BD00BF8537 /* Constants.swift */,
 				2DBF293B2575BBE500BF8537 /* Helpers.swift */,
-				2D6AED8D25769AC200CCA15F /* ImageExtensions.swift */,
-				2D6AED9225769B3000CCA15F /* CALayerExtensions.swift */,
-				2D6AEDA12577E37100CCA15F /* UIViewControllerExtension.swift */,
+				2D6AED8D25769AC200CCA15F /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -111,6 +109,7 @@
 				2DECDAEB25BA04F1006227C0 /* SetupOrgParamsGenericVC.swift */,
 				2DECDADC25BA02CA006227C0 /* SetupOrgParamsGenesysEngageVC.swift */,
 				2DECDAD425B9FF07006227C0 /* PlatformSelection.swift */,
+				2DEEEA8327C1CB6A007A6D0A /* ChatVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -122,6 +121,7 @@
 				2D6AED972577836E00CCA15F /* NotificationInternetConnection.swift */,
 				2D6AED9C2577C70B00CCA15F /* SetupOrgParamsView.swift */,
 				2D6B6046267CDBAF001E8B80 /* SetupOrgParamsEngageView.swift */,
+				2DEEEA8527C1CB9C007A6D0A /* ChatView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -306,17 +306,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D6AED9325769B3000CCA15F /* CALayerExtensions.swift in Sources */,
 				2DBF29362575B9BD00BF8537 /* Constants.swift in Sources */,
+				2DEEEA8427C1CB6A007A6D0A /* ChatVC.swift in Sources */,
 				2DBF294C2576775B00BF8537 /* LanguageSelectionVC.swift in Sources */,
-				2D6AEDA22577E37100CCA15F /* UIViewControllerExtension.swift in Sources */,
-				2D6AED8E25769AC200CCA15F /* ImageExtensions.swift in Sources */,
+				2D6AED8E25769AC200CCA15F /* Extensions.swift in Sources */,
 				2D6AED982577836E00CCA15F /* NotificationInternetConnection.swift in Sources */,
 				2D6B6047267CDBAF001E8B80 /* SetupOrgParamsEngageView.swift in Sources */,
 				2D6AED9D2577C70C00CCA15F /* SetupOrgParamsView.swift in Sources */,
 				2DBF293C2575BBE500BF8537 /* Helpers.swift in Sources */,
 				2DECDAEC25BA04F1006227C0 /* SetupOrgParamsGenericVC.swift in Sources */,
 				2DCF54AF257588AA00E566C7 /* LaunchScreen.swift in Sources */,
+				2DEEEA8627C1CB9C007A6D0A /* ChatView.swift in Sources */,
 				2DCF54AB257588AA00E566C7 /* AppDelegate.swift in Sources */,
 				2DCF54B5257588AA00E566C7 /* DemoPureCloud.xcdatamodeld in Sources */,
 				2DECDADD25BA02CA006227C0 /* SetupOrgParamsGenesysEngageVC.swift in Sources */,
@@ -481,14 +481,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = SNXJNLUKY6;
 				INFOPLIST_FILE = DemoPureCloud/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.videoengager.smartvideodemoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -505,14 +505,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = SNXJNLUKY6;
 				INFOPLIST_FILE = DemoPureCloud/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.videoengager.smartvideodemoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

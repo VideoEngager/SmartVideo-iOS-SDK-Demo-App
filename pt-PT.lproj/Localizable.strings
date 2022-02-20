@@ -13,6 +13,8 @@
 "prod_server" = "Prod Servidor";
 "start_audio_button" = "Iniciar áudio";
 "start_video_button" = "Iniciar vídeo";
+"start_chat_button" = "Iniciar bate-papo";
+
 
 "customer_name" = "Nome do cliente";
 "org_id" = "Organization Id";
@@ -42,6 +44,10 @@
 "param_error_title" = "Erro de configuração";
 "param_error_message" = "Um ou mais parâmetros obrigatórios não são fornecidos e, portanto, não podemos atender à sua solicitação.";
 "param_error_button" = "Ok";
+
+
+"end_chat" = "Fim de papo";
+"type_message" = "Digite uma mensagem...";
 
 
  

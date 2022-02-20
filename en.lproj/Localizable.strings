@@ -13,6 +13,7 @@
 "prod_server" = "Prod Server";
 "start_audio_button" = "Start Audio";
 "start_video_button" = "Start Video";
+"start_chat_button" = "Start Chat";
 
 "customer_name" = "Customer Name";
 "org_id" = "Organization Id";
@@ -41,4 +42,8 @@
 "param_error_title" = "Config Error";
 "param_error_message" = "One or more mandatory params are not provided and hence we are unable to serve your request.";
 "param_error_button" = "Ok";
+
+
+"end_chat" = "End Chat";
+"type_message" = "Type a message...";
 

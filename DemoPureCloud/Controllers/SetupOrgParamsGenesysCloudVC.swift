@@ -73,6 +73,8 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
         
         setupOrgParamsView.click2VoiceButton.addTarget(self, action: #selector(click2VoiceButtonDidTap), for: .touchUpInside)
         
+        setupOrgParamsView.click2ChatButton.addTarget(self, action: #selector(click2ChatButtonDidTap), for: .touchUpInside)
+        
         self.hideKeyboardWhenTappedAround()
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleInternetConectionAvailable), name: NOTIF_DID_CONNECT_TO_INTERNET, object: nil)
@@ -140,6 +142,12 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
     }
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        SmartVideo.chatDelegate = self
+    }
+    
+    
     deinit {
         print("OS reclaimed memory allocated for SetupOrgParamsGenesysCloudVC.")
     }
@@ -148,6 +156,7 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
     fileprivate func setupLang() {
         setupOrgParamsView.click2VoiceButton.setTitle("start_audio_button".l10n(), for: UIControl.State.normal)
         setupOrgParamsView.click2VideoButton.setTitle("start_video_button".l10n(), for: UIControl.State.normal)
+        setupOrgParamsView.click2ChatButton.setTitle("start_chat_button".l10n(), for: UIControl.State.normal)
     }
     
     
@@ -194,7 +203,8 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
         let environment = setupOrgParamsView.environment
         SmartVideo.environment = environment
         SmartVideo.setLogging(level: .verbose, types: [.rtc, .socket, .rest, .webRTC, .genesys, .callkit])
-        SmartVideo.didEstablishCommunicationChannel = didEstablishCommunicationChannel
+//        SmartVideo.didEstablishCommunicationChannel = didEstablishCommunicationChannel
+        
         
         SmartVideo.delegate = self
         
@@ -323,6 +333,43 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
     }
     
     
+    
+    @objc fileprivate func click2ChatButtonDidTap() {
+        self.disableConnect()
+        self.hasVideo = true
+        activityIndicator.startAnimating()
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.maskView.alpha = 1
+        }, completion: nil)
+
+        
+        // Provide description - data in customFields do NOT define capabilities of mobile SDK
+        let avatarImageUrl = "https://videoengager.com"
+        let urlClient = "https://my_url_client"
+        let videocall_flag = true
+        let audioonlycall_flag = false
+        let chatonly_flag = false
+        
+        
+        let customFields = ["firstName": customerFirstName,
+                            "lastName": customerLastName,
+                            "urlclient": urlClient,
+                            "videocall": videocall_flag,
+                            "audioonlycall": audioonlycall_flag,
+                            "chatonly": chatonly_flag] as [String : Any]
+        let memberInfo = ["displayName": customerName,
+                          "avatarImageUrl": avatarImageUrl,
+                          "customFields": customFields] as [String : Any]
+        
+
+        
+        let engine = GenesysEngine(environment: .live, commType: .chat , memberInfo: memberInfo)
+        let lang = SetupService.instance.preferredLanguage ?? "en_US"
+        SmartVideo.connect(engine: engine, lang: lang)
+    }
+    
+    
     fileprivate func checkAndFetchMostRecentParams() -> Bool {
         
         var isAllowedToPlaceCall: Bool = true
@@ -379,12 +426,17 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.setupOrgParamsView.click2VideoButton.isEnabled = false
                 self.setupOrgParamsView.click2VoiceButton.isEnabled = false
+                self.setupOrgParamsView.click2ChatButton.isEnabled = false
                 
                 self.setupOrgParamsView.click2VideoButton.backgroundColor = .gray
                 self.setupOrgParamsView.click2VideoButton.layer.borderColor = UIColor.gray.cgColor
                 
                 self.setupOrgParamsView.click2VoiceButton.backgroundColor = .gray
                 self.setupOrgParamsView.click2VoiceButton.layer.borderColor = UIColor.gray.cgColor
+                
+                self.setupOrgParamsView.click2ChatButton.backgroundColor = .gray
+                self.setupOrgParamsView.click2ChatButton.layer.borderColor = UIColor.gray.cgColor
+                
             }, completion: nil)
         }
     }
@@ -397,12 +449,17 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.setupOrgParamsView.click2VideoButton.isEnabled = true
                 self.setupOrgParamsView.click2VoiceButton.isEnabled = true
+                self.setupOrgParamsView.click2ChatButton.isEnabled = true
                 
                 self.setupOrgParamsView.click2VideoButton.backgroundColor = .AppBackgroundColor
                 self.setupOrgParamsView.click2VideoButton.layer.borderColor = UIColor.AppBackgroundColor.cgColor
                 
                 self.setupOrgParamsView.click2VoiceButton.backgroundColor = .AppBackgroundColor
                 self.setupOrgParamsView.click2VoiceButton.layer.borderColor = UIColor.AppBackgroundColor.cgColor
+                
+                self.setupOrgParamsView.click2ChatButton.backgroundColor = .AppBackgroundColor
+                self.setupOrgParamsView.click2ChatButton.layer.borderColor = UIColor.AppBackgroundColor.cgColor
+                
             }, completion: nil)
         }
     }
@@ -418,6 +475,9 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
                 self.setupOrgParamsView.click2VoiceButton.layer.borderColor = UIColor.AppBackgroundColor.cgColor
                 self.setupOrgParamsView.click2VoiceButton.backgroundColor = UIColor.AppBackgroundColor
                 self.setupOrgParamsView.click2VoiceButton.isEnabled = true
+                self.setupOrgParamsView.click2ChatButton.layer.borderColor = UIColor.AppBackgroundColor.cgColor
+                self.setupOrgParamsView.click2ChatButton.backgroundColor = UIColor.AppBackgroundColor
+                self.setupOrgParamsView.click2ChatButton.isEnabled = true
                 self.notificationInternetConnection.alpha = 0
             }, completion: nil)
         }
@@ -434,6 +494,9 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
                 self.setupOrgParamsView.click2VoiceButton.layer.borderColor = UIColor.lightGray.cgColor
                 self.setupOrgParamsView.click2VoiceButton.backgroundColor = UIColor.lightGray
                 self.setupOrgParamsView.click2VoiceButton.isEnabled = false
+                self.setupOrgParamsView.click2ChatButton.layer.borderColor = UIColor.lightGray.cgColor
+                self.setupOrgParamsView.click2ChatButton.backgroundColor = UIColor.lightGray
+                self.setupOrgParamsView.click2ChatButton.isEnabled = false
                 self.notificationInternetConnection.alpha = 1
             }, completion: nil)
         }
@@ -458,20 +521,60 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
 
 
 
+extension SetupOrgParamsGenesysCloudVC: SmartVideoChatDelegate {
+
+    func chatStatusChanged(status: SmartVideoChatStatus) {
+
+        print("chatStatusChanged:: \(status.rawValue)")
+        if status == .agentAnswered {
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+                self.navigationController?.setNavigationBarHidden(false, animated: true)
+                UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                    self.maskView.alpha = 0
+                }, completion: nil)
+
+                let chatVC = ChatVC()
+                chatVC.modalPresentationStyle = .fullScreen
+                SmartVideo.chatDelegate = nil
+                self.present(chatVC, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    
+    
+}
+
+
+
+
 extension SetupOrgParamsGenesysCloudVC: SmartVideoDelegate {
     
-    func didEstablishCommunicationChannel() {
-        activityIndicator.stopAnimating()
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            self.maskView.alpha = 0
-        }, completion: nil)
-
-        let outgoingCallVC = OutgoingCallVC()
-        outgoingCallVC.hasVideo = self.hasVideo
-        outgoingCallVC.modalPresentationStyle = .fullScreen
-        self.present(outgoingCallVC, animated: true, completion: nil)
+    
+    func didEstablishCommunicationChannel(type: SmartVideoCommunicationChannelType) {
+        print("TYPE:: \(type.rawValue)")
+        if type != .chat {
+            activityIndicator.stopAnimating()
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                self.maskView.alpha = 0
+            }, completion: nil)
+            
+            
+            let outgoingCallVC = OutgoingCallVC()
+            outgoingCallVC.hasVideo = self.hasVideo
+            outgoingCallVC.modalPresentationStyle = .fullScreen
+            self.present(outgoingCallVC, animated: true, completion: nil)
+        }
     }
+    
+    func callStatusChanged(status: SmartVideoCallStatus) {
+        print("STATUS:: \(status.rawValue)")
+    }
+    
+    
+
     
     func isConnectedToInternet(isConnected: Bool) {
         if isConnected {

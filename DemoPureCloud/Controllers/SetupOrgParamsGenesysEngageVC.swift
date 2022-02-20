@@ -153,7 +153,6 @@ class SetupOrgParamsGenesysEngageVC: UIViewController {
         
         SmartVideo.environment = .live
         SmartVideo.setLogging(level: .verbose, types: [.rtc, .socket, .rest, .webRTC, .genesysEngage, .callkit])
-        SmartVideo.didEstablishCommunicationChannel = didEstablishCommunicationChannel
         
         
     }
@@ -370,17 +369,25 @@ class SetupOrgParamsGenesysEngageVC: UIViewController {
 
 extension SetupOrgParamsGenesysEngageVC: SmartVideoDelegate {
     
-    func didEstablishCommunicationChannel() {
-        activityIndicator.stopAnimating()
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            self.maskView.alpha = 0
-        }, completion: nil)
-        
-        let outgoingCallVC = OutgoingCallVC()
-        outgoingCallVC.hasVideo = true//self.hasVideo
-        outgoingCallVC.modalPresentationStyle = .fullScreen
-        self.present(outgoingCallVC, animated: true, completion: nil)
+    
+    func callStatusChanged(status: SmartVideoCallStatus) {
+        print("STATUS:: \(status.rawValue)")
+    }
+    
+    func didEstablishCommunicationChannel(type: SmartVideoCommunicationChannelType) {
+        print("TYPE:: \(type.rawValue)")
+        if type != .chat {
+            activityIndicator.stopAnimating()
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                self.maskView.alpha = 0
+            }, completion: nil)
+            
+            let outgoingCallVC = OutgoingCallVC()
+            outgoingCallVC.hasVideo = true//self.hasVideo
+            outgoingCallVC.modalPresentationStyle = .fullScreen
+            self.present(outgoingCallVC, animated: true, completion: nil)
+        }
     }
     
     func isConnectedToInternet(isConnected: Bool) {
