@@ -10,13 +10,13 @@ PODS:
   - L10n-swift/IBInspectable (5.10.0):
     - L10n-swift/Core
   - ShimmerSwift (2.1.1)
-  - SmartVideo (20220314.140146):
+  - SmartVideo (1.10.1):
     - GoogleWebRTC
 
 DEPENDENCIES:
   - L10n-swift (~> 5.8)
   - ShimmerSwift
-  - SmartVideo
+  - SmartVideo (~> 1.10.1)
 
 SPEC REPOS:
   trunk:
@@ -29,8 +29,8 @@ SPEC CHECKSUMS:
   GoogleWebRTC: b39a78c4f5cc6b0323415b9233db03a2faa7b0f0
   L10n-swift: 4674994a2783577bd90ed80775e7526bcae3da1e
   ShimmerSwift: f7ed2daf9c246de8299dfd9e12c6ab465cba9842
-  SmartVideo: 7e42e9de15390f89f178034eb27e41232b6c2615
+  SmartVideo: ea2bdfa7a255996ca8b71194fe98b8dbc89e6472
 
-PODFILE CHECKSUM: b354e1a5d1eb041a252c94a925005d0880e06d5d
+PODFILE CHECKSUM: ffb5407bfeadc07a31c3e257d8f2cee1dc2954c6
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

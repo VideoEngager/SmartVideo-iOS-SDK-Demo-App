@@ -30,7 +30,7 @@
 		2DEEEA8427C1CB6A007A6D0A /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEEEA8327C1CB6A007A6D0A /* ChatVC.swift */; };
 		2DEEEA8627C1CB9C007A6D0A /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEEEA8527C1CB9C007A6D0A /* ChatView.swift */; };
 		4D50526C25B5CB9500567198 /* SmartVideo-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D50526B25B5CB9500567198 /* SmartVideo-Info.plist */; };
-		C1ADE01A36E2994BB879F293 /* Pods_DemoPureCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C2141202E9BF8155B84384 /* Pods_DemoPureCloud.framework */; };
+		5CEB292D0FB833DBC4070AEC /* Pods_DemoPureCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F848661FD8B46AE68FEF86F7 /* Pods_DemoPureCloud.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,10 +62,10 @@
 		2DECDAEB25BA04F1006227C0 /* SetupOrgParamsGenericVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupOrgParamsGenericVC.swift; sourceTree = "<group>"; };
 		2DEEEA8327C1CB6A007A6D0A /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		2DEEEA8527C1CB9C007A6D0A /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
-		3E6616C2EF0EC3317E5C8840 /* Pods-DemoPureCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoPureCloud.release.xcconfig"; path = "Target Support Files/Pods-DemoPureCloud/Pods-DemoPureCloud.release.xcconfig"; sourceTree = "<group>"; };
-		43C2141202E9BF8155B84384 /* Pods_DemoPureCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoPureCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D50526B25B5CB9500567198 /* SmartVideo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SmartVideo-Info.plist"; sourceTree = "<group>"; };
-		51C1AB78634152829367B047 /* Pods-DemoPureCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoPureCloud.debug.xcconfig"; path = "Target Support Files/Pods-DemoPureCloud/Pods-DemoPureCloud.debug.xcconfig"; sourceTree = "<group>"; };
+		714CD78BFE7BF0F6D006A824 /* Pods-DemoPureCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoPureCloud.release.xcconfig"; path = "Target Support Files/Pods-DemoPureCloud/Pods-DemoPureCloud.release.xcconfig"; sourceTree = "<group>"; };
+		CE16C9B1335DE89173F5A2D3 /* Pods-DemoPureCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoPureCloud.debug.xcconfig"; path = "Target Support Files/Pods-DemoPureCloud/Pods-DemoPureCloud.debug.xcconfig"; sourceTree = "<group>"; };
+		F848661FD8B46AE68FEF86F7 /* Pods_DemoPureCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoPureCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1ADE01A36E2994BB879F293 /* Pods_DemoPureCloud.framework in Frameworks */,
+				5CEB292D0FB833DBC4070AEC /* Pods_DemoPureCloud.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +133,7 @@
 				2DCF54A9257588AA00E566C7 /* DemoPureCloud */,
 				2DCF54A8257588AA00E566C7 /* Products */,
 				7BFA2BDF80BD9159BC593A55 /* Pods */,
-				D7DDED86EEE95BAF6915ABF2 /* Frameworks */,
+				A2B40AAEEF5A882CA6D56775 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,16 +172,16 @@
 		7BFA2BDF80BD9159BC593A55 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				51C1AB78634152829367B047 /* Pods-DemoPureCloud.debug.xcconfig */,
-				3E6616C2EF0EC3317E5C8840 /* Pods-DemoPureCloud.release.xcconfig */,
+				CE16C9B1335DE89173F5A2D3 /* Pods-DemoPureCloud.debug.xcconfig */,
+				714CD78BFE7BF0F6D006A824 /* Pods-DemoPureCloud.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		D7DDED86EEE95BAF6915ABF2 /* Frameworks */ = {
+		A2B40AAEEF5A882CA6D56775 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				43C2141202E9BF8155B84384 /* Pods_DemoPureCloud.framework */,
+				F848661FD8B46AE68FEF86F7 /* Pods_DemoPureCloud.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -193,11 +193,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2DCF54D4257588B000E566C7 /* Build configuration list for PBXNativeTarget "DemoPureCloud" */;
 			buildPhases = (
-				0025010FE31D6CAF2D1A0B46 /* [CP] Check Pods Manifest.lock */,
+				0C2767F7B69030AC256EEF9C /* [CP] Check Pods Manifest.lock */,
 				2DCF54A3257588AA00E566C7 /* Sources */,
 				2DCF54A4257588AA00E566C7 /* Frameworks */,
 				2DCF54A5257588AA00E566C7 /* Resources */,
-				DD32493964ECF94D51EF685B /* [CP] Embed Pods Frameworks */,
+				7F116FF9465CFB0832E473E5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -260,7 +260,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0025010FE31D6CAF2D1A0B46 /* [CP] Check Pods Manifest.lock */ = {
+		0C2767F7B69030AC256EEF9C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -282,7 +282,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DD32493964ECF94D51EF685B /* [CP] Embed Pods Frameworks */ = {
+		7F116FF9465CFB0832E473E5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -475,7 +475,7 @@
 		};
 		2DCF54D5257588B000E566C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51C1AB78634152829367B047 /* Pods-DemoPureCloud.debug.xcconfig */;
+			baseConfigurationReference = CE16C9B1335DE89173F5A2D3 /* Pods-DemoPureCloud.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -499,7 +499,7 @@
 		};
 		2DCF54D6257588B000E566C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E6616C2EF0EC3317E5C8840 /* Pods-DemoPureCloud.release.xcconfig */;
+			baseConfigurationReference = 714CD78BFE7BF0F6D006A824 /* Pods-DemoPureCloud.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

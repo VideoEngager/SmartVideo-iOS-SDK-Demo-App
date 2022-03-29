@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import SmartVideo
+import SmartVideoSDK
 
 class SetupOrgParamsView: UIView, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     

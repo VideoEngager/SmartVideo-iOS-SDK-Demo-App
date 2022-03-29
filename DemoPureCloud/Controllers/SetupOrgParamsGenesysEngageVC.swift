@@ -7,7 +7,7 @@
 
 import UIKit
 import AVKit
-import SmartVideo
+import SmartVideoSDK
 
 
 class SetupOrgParamsGenesysEngageVC: UIViewController {

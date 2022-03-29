@@ -7,7 +7,7 @@
 
 import UIKit
 import AVKit
-import SmartVideo
+import SmartVideoSDK
 
 
 class SetupOrgParamsGenericVC: UIViewController {
@@ -196,7 +196,8 @@ class SetupOrgParamsGenericVC: UIViewController {
             self.maskView.alpha = 1
         }, completion: nil)
         
-
+        
+            
         SmartVideo.environment = .live
         let engine = GenericEngine(shortURL: self.shortUrl)
         let lang = SetupService.instance.preferredLanguage ?? "en_US"

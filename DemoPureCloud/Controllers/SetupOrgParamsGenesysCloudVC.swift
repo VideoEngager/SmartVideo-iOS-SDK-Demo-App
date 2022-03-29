@@ -8,7 +8,7 @@
 
 import UIKit
 import AVKit
-import SmartVideo
+import SmartVideoSDK
 
 
 class SetupOrgParamsGenesysCloudVC: UIViewController {
@@ -314,9 +314,12 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
             
             let outgoingCallVC = ["hideAvatar": true,
                                   "hideName": true] as [String : Any]
+            let inCallVC =       ["toolBarHideTimeout": -1] as [String : Any]
             let customSettings = ["allowVisitorToSwitchAudioCallToVideoCall": false,
                                   "securityCode": securityCodeText,
                                   "backgroundImageURL": imgURL,
+                                  "customerLabel": "Some custom name",
+                                  "inCallVC": inCallVC,
                                   "outgoingCallVC": outgoingCallVC] as [String : Any]
 
             

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SmartVideo
+import SmartVideoSDK
 
 
 let imageCache = NSCache<AnyObject, AnyObject>()

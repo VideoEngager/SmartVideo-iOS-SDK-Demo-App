@@ -7,7 +7,7 @@
 
 import UIKit
 import CoreData
-import SmartVideo
+import SmartVideoSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
