@@ -584,6 +584,7 @@ extension SetupOrgParamsGenesysCloudVC: SmartVideoDelegate {
             debug("Connected to internet", level: .info, type: .genesys)
         } else {
             debug("Not connected to internet", level: .error, type: .genesys)
+            SmartVideo.callManager.hangupAndEnd()
         }
     }
     
