@@ -599,7 +599,9 @@ extension SetupOrgParamsGenesysCloudVC: SmartVideoDelegate {
             }, completion: nil)
             SmartVideo.callManager.hangupAndEnd()
             
-            let alert = UIAlertController(title: "config_params_error_title".l10n(), message: "config_params_error_message".l10n(), preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "config_params_error_title".l10n(),
+                                          message: error.error,
+                                          preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "config_params_error_action".l10n(), style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
