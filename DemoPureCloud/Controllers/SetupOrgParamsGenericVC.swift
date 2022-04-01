@@ -314,6 +314,7 @@ extension SetupOrgParamsGenericVC: SmartVideoDelegate {
     
     
     func isConnectedToInternet(isConnected: Bool) {
+        print("Test")
         if isConnected {
             debug("Connected to internet", level: .info, type: .generic)
         } else {
