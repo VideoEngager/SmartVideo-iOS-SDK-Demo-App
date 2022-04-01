@@ -18,7 +18,6 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
     let customerLastName =  "Tester"
     var customerName = String()
     
-
     lazy var setupOrgParamsView: SetupOrgParamsView = {
         let lb = SetupOrgParamsView()
         lb.translatesAutoresizingMaskIntoConstraints = false
@@ -33,7 +32,6 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
         return sv
     }()
     
-    
     let activityIndicator: UIActivityIndicatorView = {
         let ai = UIActivityIndicatorView()
         ai.translatesAutoresizingMaskIntoConstraints = false
@@ -45,7 +43,6 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
     }()
     
     var maskView = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
-    
     
     let notificationInternetConnection: NotificationInternetConnection = {
         let notif = NotificationInternetConnection()
@@ -311,11 +308,12 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
             
             let outgoingCallVC = ["hideAvatar": true,
                                   "hideName": true] as [String : Any]
-            let inCallVC =       ["toolBarHideTimeout": -1] as [String : Any]
+            let inCallVC =       ["toolBarHideTimeout": -1] as [String : Any] // New Field Presenting Behaviour of Toolbars during a call
             let customSettings = ["allowVisitorToSwitchAudioCallToVideoCall": false,
                                   "securityCode": securityCodeText,
                                   "backgroundImageURL": imgURL,
-                                  "customerLabel": "Some custom name",
+                                  "customerLabel": "Some custom name", // New Field Presenting the Custom Agent Name,
+                                  "agentWaitingTimeout": 90, // New Field Presenting the Time Before Call End If Agent Not Answer
                                   "inCallVC": inCallVC,
                                   "outgoingCallVC": outgoingCallVC] as [String : Any]
 
@@ -584,6 +582,9 @@ extension SetupOrgParamsGenesysCloudVC: SmartVideoDelegate {
         }
     }
     
+    // New Function Provide Custom Logic On Agent Timeout
+    // return true - show default UI
+    // return false - doesn't who default UI -> custom logic
     func onAgentTimeout() -> Bool {
         return true
     }
