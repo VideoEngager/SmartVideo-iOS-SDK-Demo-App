@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SmartVideoSDK
 
 class PlatformSelectionVC: UIViewController {
     
@@ -142,12 +142,8 @@ class PlatformSelectionVC: UIViewController {
             appCurrentVersionLabel.text = "app_version".l10n() + " " + appVersion
         }
         
-        let sdkVersion = "20220220.004907"
-        sdkCurrentVersionLabel.text = "sdk_version".l10n() + " " + sdkVersion
-    
-        
+        sdkCurrentVersionLabel.text = "sdk_version".l10n() + " " + SmartVideo.version
     }
-    
     
     fileprivate func setupViews() {
         

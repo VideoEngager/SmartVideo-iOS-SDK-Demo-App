@@ -203,9 +203,6 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
         let environment = setupOrgParamsView.environment
         SmartVideo.environment = environment
         SmartVideo.setLogging(level: .verbose, types: [.rtc, .socket, .rest, .webRTC, .genesys, .callkit])
-//        SmartVideo.didEstablishCommunicationChannel = didEstablishCommunicationChannel
-        
-        
         SmartVideo.delegate = self
         
     }
@@ -505,15 +502,10 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
         }
     }
     
-    
-    
     override func willMove(toParent parent: UIViewController?) {
         navigationController?.navigationBar.isHidden = true
         SmartVideo.callManager.hangup()
-//        SmartVideo.callManager.hangupAndEnd()
     }
-    
-    
     
     override open var shouldAutorotate: Bool {
         return false
@@ -521,13 +513,8 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
 
 }
 
-
-
-
 extension SetupOrgParamsGenesysCloudVC: SmartVideoChatDelegate {
-
     func chatStatusChanged(status: SmartVideoChatStatus) {
-
         print("chatStatusChanged:: \(status.rawValue)")
         if status == .agentAnswered {
             DispatchQueue.main.async {
@@ -544,16 +531,9 @@ extension SetupOrgParamsGenesysCloudVC: SmartVideoChatDelegate {
             }
         }
     }
-    
-    
-    
 }
 
-
-
-
 extension SetupOrgParamsGenesysCloudVC: SmartVideoDelegate {
-    
     
     func didEstablishCommunicationChannel(type: SmartVideoCommunicationChannelType) {
         print("TYPE:: \(type.rawValue)")
@@ -575,9 +555,6 @@ extension SetupOrgParamsGenesysCloudVC: SmartVideoDelegate {
     func callStatusChanged(status: SmartVideoCallStatus) {
         print("STATUS:: \(status.rawValue)")
     }
-    
-    
-
     
     func isConnectedToInternet(isConnected: Bool) {
         if isConnected {
@@ -607,6 +584,9 @@ extension SetupOrgParamsGenesysCloudVC: SmartVideoDelegate {
         }
     }
     
+    func onAgentTimeout() -> Bool {
+        return true
+    }
     
     func peerConnectionLost() {
         debug("Peer is no longer connected to the internet", level: .error, type: .genesys)

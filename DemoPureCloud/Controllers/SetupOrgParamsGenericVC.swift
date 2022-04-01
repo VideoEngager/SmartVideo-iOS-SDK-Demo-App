@@ -159,7 +159,6 @@ class SetupOrgParamsGenericVC: UIViewController {
         
         SmartVideo.environment = .live
         SmartVideo.setLogging(level: .verbose, types: [.rtc, .socket, .rest, .webRTC, .genesys, .callkit])
-        
         SmartVideo.delegate = self
           
     }
@@ -300,7 +299,8 @@ extension SetupOrgParamsGenericVC: SmartVideoDelegate {
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.maskView.alpha = 0
             }, completion: nil)
-
+            
+            
             let outgoingCallVC = OutgoingCallVC()
             outgoingCallVC.hasVideo = self.hasVideo
             outgoingCallVC.modalPresentationStyle = .fullScreen
@@ -314,11 +314,11 @@ extension SetupOrgParamsGenericVC: SmartVideoDelegate {
     
     
     func isConnectedToInternet(isConnected: Bool) {
-        print("Test")
         if isConnected {
             debug("Connected to internet", level: .info, type: .generic)
         } else {
             debug("Not connected to internet", level: .error, type: .generic)
+            SmartVideo.callManager.hangupAndEnd()
         }
     }
     

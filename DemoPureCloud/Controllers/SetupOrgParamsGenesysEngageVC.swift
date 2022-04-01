@@ -153,8 +153,7 @@ class SetupOrgParamsGenesysEngageVC: UIViewController {
         
         SmartVideo.environment = .live
         SmartVideo.setLogging(level: .verbose, types: [.rtc, .socket, .rest, .webRTC, .genesysEngage, .callkit])
-        
-        
+        SmartVideo.delegate = self
     }
     
     
@@ -395,6 +394,7 @@ extension SetupOrgParamsGenesysEngageVC: SmartVideoDelegate {
             debug("Connected to internet", level: .info, type: .genesysEngage)
         } else {
             debug("Not connected to internet", level: .error, type: .genesysEngage)
+            SmartVideo.callManager.hangupAndEnd()
         }
     }
     
