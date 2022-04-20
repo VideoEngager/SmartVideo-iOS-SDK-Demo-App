@@ -532,6 +532,13 @@ extension SetupOrgParamsGenesysCloudVC: SmartVideoChatDelegate {
 }
 
 extension SetupOrgParamsGenesysCloudVC: SmartVideoDelegate {
+    func failedEstablishCommunicationChannel(type: SmartVideoCommunicationChannelType) {
+        activityIndicator.stopAnimating()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.maskView.alpha = 0
+        }, completion: nil)
+    }
     
     func didEstablishCommunicationChannel(type: SmartVideoCommunicationChannelType) {
         print("TYPE:: \(type.rawValue)")

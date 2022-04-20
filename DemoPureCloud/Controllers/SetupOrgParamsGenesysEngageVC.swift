@@ -152,7 +152,7 @@ class SetupOrgParamsGenesysEngageVC: UIViewController {
         }
         
         SmartVideo.environment = .live
-        SmartVideo.setLogging(level: .verbose, types: [.rtc, .socket, .rest, .webRTC, .genesysEngage, .callkit])
+        SmartVideo.setLogging(level: .verbose, types: [.rtc, .socket, .rest, .webRTC, .genesys, .callkit])
         SmartVideo.delegate = self
     }
     
@@ -367,7 +367,13 @@ class SetupOrgParamsGenesysEngageVC: UIViewController {
 }
 
 extension SetupOrgParamsGenesysEngageVC: SmartVideoDelegate {
-    
+    func failedEstablishCommunicationChannel(type: SmartVideoCommunicationChannelType) {
+        activityIndicator.stopAnimating()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.maskView.alpha = 0
+        }, completion: nil)
+    }
     
     func callStatusChanged(status: SmartVideoCallStatus) {
         print("STATUS:: \(status.rawValue)")
@@ -391,16 +397,16 @@ extension SetupOrgParamsGenesysEngageVC: SmartVideoDelegate {
     
     func isConnectedToInternet(isConnected: Bool) {
         if isConnected {
-            debug("Connected to internet", level: .info, type: .genesysEngage)
+            debug("Connected to internet", level: .info, type: .genesys)
         } else {
-            debug("Not connected to internet", level: .error, type: .genesysEngage)
+            debug("Not connected to internet", level: .error, type: .genesys)
             SmartVideo.callManager.hangupAndEnd()
         }
     }
     
     
     func errorHandler(error: SmartVideoError) {
-        debug("SmartVideo Communication error. Error is: \(error)", level: .error, type: .genesysEngage)
+        debug("SmartVideo Communication error. Error is: \(error)", level: .error, type: .genesys)
         DispatchQueue.main.async {
             self.activityIndicator.stopAnimating()
             self.navigationController?.setNavigationBarHidden(false, animated: true)
@@ -419,13 +425,13 @@ extension SetupOrgParamsGenesysEngageVC: SmartVideoDelegate {
     
     
     func peerConnectionLost() {
-        debug("Peer is no longer connected to the internet", level: .error, type: .genesysEngage)
+        debug("Peer is no longer connected to the internet", level: .error, type: .genesys)
     }
     
     
     
     func genesysEngageChat(message: String, from: String) {
-        debug("Incoming text message from \(from): \(message)", level: .info, type: .genesysEngage)
+        debug("Incoming text message from \(from): \(message)", level: .info, type: .genesys)
     }
     
 }
