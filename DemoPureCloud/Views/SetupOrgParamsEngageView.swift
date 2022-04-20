@@ -105,7 +105,7 @@ class SetupOrgParamsEngageView: UIView, UITableViewDelegate, UITableViewDataSour
             nsDictionary = NSDictionary(contentsOfFile: path)
         }
         else {
-            debug("SmartVideo-Info.plist not exist in the project. Please add it to the project.", level: .error, type: .genesysEngage)
+            debug("SmartVideo-Info.plist not exist in the project. Please add it to the project.", level: .error, type: .genesys)
             return
         }
 
@@ -126,7 +126,7 @@ class SetupOrgParamsEngageView: UIView, UITableViewDelegate, UITableViewDataSour
                 if environment == .live {
                     GENESYS_ENGAGE_INIT_PARAMS_LIVE = [server_url, agent_url, first_name, last_name, email, subject, service_name, authorization_value]
                 } else  {
-                    debug("Parameter Environment in your SmartVideo-Info.plist is correct. We currently support only prod environment and the value of this parameter must be live.", level: .error, type: .genesysEngage)
+                    debug("Parameter Environment in your SmartVideo-Info.plist is correct. We currently support only prod environment and the value of this parameter must be live.", level: .error, type: .genesys)
                 }
             }
         }

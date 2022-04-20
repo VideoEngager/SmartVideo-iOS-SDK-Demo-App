@@ -158,7 +158,7 @@ class SetupOrgParamsGenericVC: UIViewController {
         }
         
         SmartVideo.environment = .live
-        SmartVideo.setLogging(level: .verbose, types: [.rtc, .socket, .rest, .webRTC, .genesys, .callkit])
+        SmartVideo.setLogging(level: .verbose, types: [.rtc, .socket, .rest, .webRTC, .generic, .callkit])
         SmartVideo.delegate = self
           
     }
@@ -289,6 +289,13 @@ class SetupOrgParamsGenericVC: UIViewController {
 
 
 extension SetupOrgParamsGenericVC: SmartVideoDelegate {
+    func failedEstablishCommunicationChannel(type: SmartVideoCommunicationChannelType) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.maskView.alpha = 0
+        }, completion: nil)
+    }
+    
     
     
     func didEstablishCommunicationChannel(type: SmartVideoCommunicationChannelType) {
