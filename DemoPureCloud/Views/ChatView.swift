@@ -8,13 +8,16 @@
 import UIKit
 import SmartVideoSDK
 
+protocol ChatViewDelegate {
+    func messageLinkTapped(url: URL)
+}
 
 class ChatView: UIView {
     
     let chatTableView: UITableView = {
         let tv = UITableView()
         tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.isUserInteractionEnabled = true
+//        tv.isUserInteractionEnabled = true
         tv.register(LeftMessageImageChatTableViewCell.self, forCellReuseIdentifier: "otherChatCell")
         tv.register(ChatTableViewCell.self, forCellReuseIdentifier: "myChatCell")
         tv.separatorStyle = .none
@@ -79,6 +82,7 @@ class ChatView: UIView {
     var memberID = String()
     var displayName = String()
     var avatarImage: UIImage?
+    var delegate: ChatViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -117,16 +121,44 @@ extension ChatView: UITableViewDataSource {
             if let image = avatarImage {
                 cell.profileImageView.image = image
             }
+            checkForURL(cell: cell)
             return cell
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "myChatCell", for: indexPath) as! ChatTableViewCell
             cell.messageLabel.text = message.message
             cell.dateLabel.text = formatter.string(from: message.date)
+            checkForURL(cell: cell)
             return cell
+        }
+        
+        
+    }
+    
+    func checkForURL(cell: ChatTableViewCell) {
+        if let text = cell.messageLabel.text,
+           text.isValidURL {
+            let underlineString = NSAttributedString(string: text,
+                                                      attributes: [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
+                                                                   NSAttributedString.Key.foregroundColor: UIColor.blue,
+                                                                   NSAttributedString.Key.font: cell.messageLabel.font!])
+            cell.messageLabel.attributedText = underlineString
+            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(click))
+            tap.numberOfTapsRequired = 1
+            tap.numberOfTouchesRequired = 1
+            cell.messageView.addGestureRecognizer(tap)
         }
     }
     
+    @objc func click(_ r: UITapGestureRecognizer) {
+        if let stack = r.view?.subviews.first as? UIStackView,
+           let label = stack.arrangedSubviews.first as? UILabel,
+           let text = label.text,
+           let url = URL(string: text) {
+            self.delegate?.messageLinkTapped(url: url)
+        }
+    }
     
     
     fileprivate func setupViews() {
@@ -279,5 +311,17 @@ class LeftMessageImageChatTableViewCell: ChatTableViewCell {
         self.stack.trailingAnchor.constraint(equalTo: self.messageView.trailingAnchor, constant: -10).isActive = true
         self.stack.topAnchor.constraint(equalTo: self.messageView.topAnchor, constant: 10).isActive = true
         self.stack.bottomAnchor.constraint(equalTo: self.messageView.bottomAnchor, constant: -10).isActive = true
+    }
+}
+
+extension String {
+    var isValidURL: Bool {
+        let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
+        if let match = detector.firstMatch(in: self, options: [], range: NSRange(location: 0, length: self.utf16.count)) {
+            // it is a link, if the match covers the whole string
+            return match.range.length == self.utf16.count
+        } else {
+            return false
+        }
     }
 }

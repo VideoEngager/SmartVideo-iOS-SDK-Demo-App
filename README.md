@@ -255,9 +255,25 @@ class MyAwesomeVC: UIViewController {
 }
 
 ```
+
+### Short URL call 
+You can use this method of SDK to make you own implementation for Escalation or Schedule scenarios. If your users receives special invitation Url when a interaction is not started (for example from Calendar app). Below is an example:
+
+```
+func callByInvitation(url: String) {
+    SmartVideo.environment = .live
+    let engine = GenericEngine(environment: .live, invitationURL: url)
+    SmartVideo.connect(engine: engine, isVideo: false)
+}
+```
  
-
-
+### Short URL call during a interaction
+You can use this method of SDK to make you own implementation for Escalation or Schedule scenarios. If your users receives special VeVisitorVideoCall Url **DURING** existing interaction(like chat) you can pass it in veVisitorVideoCall(link:String) and SDK will call associated Agent. Below is an example:
+```
+func callByInvitation(url: String) {
+    SmartVideo.veVisitorVideoCall(link: url)
+}
+```
 
 ### Error Handling
 This step requires to prepare your app for error handling. SmartVideo SDK considers two type of errors:

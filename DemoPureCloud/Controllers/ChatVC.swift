@@ -17,6 +17,7 @@ class ChatVC: UIViewController, UITextFieldDelegate {
 
     lazy var chatView: ChatView = {
         let cv = ChatView()
+        cv.delegate = self
         cv.chatTableView.backgroundColor = .white
         cv.chatTextField.delegate = self
         cv.translatesAutoresizingMaskIntoConstraints = false
@@ -118,7 +119,7 @@ class ChatVC: UIViewController, UITextFieldDelegate {
                                 
                                 session.dataTask(with: url) { data, response, error in
                                     if let err = error {
-                                        debug("Error when trying to download agent avatar image. Error is \(err)", level: .error, type: .genesys)
+                                        debug("Error when trying to download agent avatar image. Error is \(err)", level: .error, type: .general)
                                     }
                                     DispatchQueue.main.async {
                                         if let safeData = data {
@@ -164,11 +165,6 @@ class ChatVC: UIViewController, UITextFieldDelegate {
 
 extension ChatVC: SmartVideoChatDelegate {
     
-//    func chatStatusChanged(status: SmartVideoChatStatus) {
-//        print("CHAT STATUS:: \(status.rawValue)")
-//    }
-    
-    
     func genesysCloudChat(message: ChatMessage) {
         messages.append(message)
         updateChat(messages: messages)
@@ -180,8 +176,20 @@ extension ChatVC: SmartVideoChatDelegate {
     
     
     func errorHandler(error: SmartVideoError) {
-        debug("SmartVideo Chat error. Error is: \(error)", level: .error, type: .genesys)
+        //debug("SmartVideo Chat error. Error is: \(error)", level: .error, type: .general)
         
     }
 }
 
+extension ChatVC: ChatViewDelegate {
+    func messageLinkTapped(url: URL) {
+        if url.absoluteString.contains(".com/ve/"),
+           url.absoluteString.starts(with: "https")
+        {
+            SmartVideo.veVisitorVideoCall(link: url.absoluteString)
+        }
+        else {
+            UIApplication.shared.open(url)
+        }
+    }
+}
