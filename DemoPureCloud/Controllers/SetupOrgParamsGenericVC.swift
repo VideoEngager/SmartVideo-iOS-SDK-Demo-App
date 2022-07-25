@@ -15,6 +15,33 @@ class SetupOrgParamsGenericVC: UIViewController {
     // Please replace with the shortUrl for your account
     let shortUrl = "pureclouddemo"
 
+    let invitationTextfield: UITextField = {
+        let tf = UITextField()
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.layer.borderColor = UIColor.black.cgColor
+        tf.layer.borderWidth = 1
+        tf.layer.cornerRadius = 8
+        tf.textColor = .black
+        tf.clearButtonMode = .always
+        tf.placeholder = "Invitation URL"
+        tf.text = UserDefaults.standard.string(forKey: "invitationURL")
+        tf.clearButtonMode = .always
+        return tf
+    }()
+    
+    let click2InvitationButton: UIButton = {
+        let lb = UIButton()
+        lb.translatesAutoresizingMaskIntoConstraints = false
+        lb.layer.cornerRadius = 10
+        lb.layer.borderColor = UIColor.gray.cgColor
+        lb.backgroundColor = UIColor.gray
+        // lb.setTitle("Start Video", for: UIControl.State.normal)
+        lb.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        lb.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        lb.isEnabled = false
+        lb.setTitle("Call invitation", for: .normal)
+        return lb
+    }()
     
     let click2VideoButton: UIButton = {
         let lb = UIButton()
@@ -86,6 +113,8 @@ class SetupOrgParamsGenericVC: UIViewController {
         
         click2VoiceButton.addTarget(self, action: #selector(click2VoiceButtonDidTap), for: .touchUpInside)
         
+        click2InvitationButton.addTarget(self, action: #selector(click2InvitationButtonDidTap), for: .touchUpInside)
+        
         self.hideKeyboardWhenTappedAround()
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleInternetConectionAvailable), name: NOTIF_DID_CONNECT_TO_INTERNET, object: nil)
@@ -113,6 +142,8 @@ class SetupOrgParamsGenericVC: UIViewController {
     
     
     fileprivate func setupViews() {
+        view.addSubview(invitationTextfield)
+        view.addSubview(click2InvitationButton)
         view.addSubview(click2VideoButton)
         view.addSubview(click2VoiceButton)
         view.addSubview(notificationInternetConnection)
@@ -124,7 +155,16 @@ class SetupOrgParamsGenericVC: UIViewController {
         activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
         activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
         
-
+        invitationTextfield.bottomAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
+        invitationTextfield.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
+        invitationTextfield.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true
+        invitationTextfield.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        click2InvitationButton.bottomAnchor.constraint(equalTo: view.topAnchor, constant: 370).isActive = true
+        click2InvitationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
+        click2InvitationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true
+        click2InvitationButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
         click2VideoButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200).isActive = true
         click2VideoButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
         click2VideoButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true
@@ -205,18 +245,45 @@ class SetupOrgParamsGenericVC: UIViewController {
     
     }
     
+    @objc func click2InvitationButtonDidTap() {
+        
+        if self.invitationTextfield.text?.isEmpty ?? true {
+            return
+        }
+        
+        self.disableConnect()
+        self.hasVideo = false
+        
+        activityIndicator.startAnimating()
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.maskView.alpha = 1
+        }, completion: nil)
+        
+        UserDefaults.standard.set(self.invitationTextfield.text, forKey: "invitationURL")
+
+        SmartVideo.environment = .live
+        let engine = GenericEngine(environment: .live, invitationURL: self.invitationTextfield.text ?? "")
+        let lang = SetupService.instance.preferredLanguage ?? "en_US"
+        SmartVideo.connect(engine: engine, isVideo: false, lang: lang)
+    
+    }
     
     fileprivate func disableConnect() {
         DispatchQueue.main.async {
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.click2VideoButton.isEnabled = false
                 self.click2VoiceButton.isEnabled = false
+                self.click2InvitationButton.isEnabled = false
                 
                 self.click2VideoButton.backgroundColor = .gray
                 self.click2VideoButton.layer.borderColor = UIColor.gray.cgColor
                 
                 self.click2VoiceButton.backgroundColor = .gray
                 self.click2VoiceButton.layer.borderColor = UIColor.gray.cgColor
+                
+                self.click2InvitationButton.backgroundColor = .gray
+                self.click2InvitationButton.layer.borderColor = UIColor.gray.cgColor
             }, completion: nil)
         }
     }
@@ -229,12 +296,16 @@ class SetupOrgParamsGenericVC: UIViewController {
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.click2VideoButton.isEnabled = true
                 self.click2VoiceButton.isEnabled = true
+                self.click2InvitationButton.isEnabled = true
                 
                 self.click2VideoButton.backgroundColor = .AppBackgroundColor
                 self.click2VideoButton.layer.borderColor = UIColor.AppBackgroundColor.cgColor
                 
                 self.click2VoiceButton.backgroundColor = .AppBackgroundColor
                 self.click2VoiceButton.layer.borderColor = UIColor.AppBackgroundColor.cgColor
+                
+                self.click2InvitationButton.backgroundColor = .AppBackgroundColor
+                self.click2InvitationButton.layer.borderColor = UIColor.AppBackgroundColor.cgColor
             }, completion: nil)
         }
     }
@@ -311,7 +382,12 @@ extension SetupOrgParamsGenericVC: SmartVideoDelegate {
             let outgoingCallVC = OutgoingCallVC()
             outgoingCallVC.hasVideo = self.hasVideo
             outgoingCallVC.modalPresentationStyle = .fullScreen
-            self.present(outgoingCallVC, animated: true, completion: nil)
+            if let presenting = self.presentedViewController {
+                presenting.present(outgoingCallVC, animated: true)
+            }
+            else {
+                self.present(outgoingCallVC, animated: true, completion: nil)
+            }
         }
     }
     

@@ -112,11 +112,11 @@ class PlatformSelectionVC: UIViewController {
     }
     
     
-    @objc private func handleGeneric() {
+    @objc func handleGeneric() -> SetupOrgParamsGenericVC {
         
         let setupOrgParamsGenericVC = SetupOrgParamsGenericVC()
         navigationController?.pushViewController(setupOrgParamsGenericVC, animated: true)
-        
+        return setupOrgParamsGenericVC
     }
     
     
@@ -186,10 +186,22 @@ class PlatformSelectionVC: UIViewController {
         sdkCurrentVersionLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         sdkCurrentVersionLabel.bottomAnchor.constraint(equalTo: appCurrentVersionLabel.topAnchor).isActive = true
         
-        
+//        let b = UIButton()
+//        b.translatesAutoresizingMaskIntoConstraints = false
+//        b.setTitle("Test", for: .normal)
+//        b.setTitleColor(.black, for: .normal)
+//        b.addTarget(self, action: #selector(test), for: .touchUpInside)
+//        view.addSubview(b)
+//        b.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        b.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80).isActive = true
+//        b.heightAnchor.constraint(equalToConstant: 100).isActive = true
+//        b.widthAnchor.constraint(equalToConstant: 200).isActive = true
     }
     
-    
+    @objc func test() {
+        let ad = UIApplication.shared.delegate as! AppDelegate
+        ad.application(UIApplication.shared, open: URL(string: "https://videome.leadsecure.com/ve/S9ujQd")!, sourceApplication: nil, annotation: [])
+    }
     
     
     override open var shouldAutorotate: Bool {

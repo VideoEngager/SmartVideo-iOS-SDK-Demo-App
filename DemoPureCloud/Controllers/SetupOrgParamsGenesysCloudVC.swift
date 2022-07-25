@@ -553,7 +553,12 @@ extension SetupOrgParamsGenesysCloudVC: SmartVideoDelegate {
             let outgoingCallVC = OutgoingCallVC()
             outgoingCallVC.hasVideo = self.hasVideo
             outgoingCallVC.modalPresentationStyle = .fullScreen
-            self.present(outgoingCallVC, animated: true, completion: nil)
+            if let presenting = self.presentedViewController {
+                presenting.present(outgoingCallVC, animated: true)
+            }
+            else {
+                self.present(outgoingCallVC, animated: true, completion: nil)
+            }
         }
     }
     

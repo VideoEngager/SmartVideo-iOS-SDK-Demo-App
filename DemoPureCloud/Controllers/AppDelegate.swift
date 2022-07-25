@@ -45,6 +45,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return true
     }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        if let platformController = (UIApplication.shared.windows.first?.rootViewController as? UINavigationController)?.topViewController as? PlatformSelectionVC {
+            platformController.navigationController?.popToRootViewController(animated: true)
+            let genericVC = platformController.handleGeneric()
+            genericVC.invitationTextfield.text = url.absoluteString
+            genericVC.click2InvitationButtonDidTap()
+        }
+        return true
+    }
+    
 
     // MARK: - Core Data stack
 
