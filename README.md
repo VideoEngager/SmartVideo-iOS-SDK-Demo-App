@@ -92,6 +92,8 @@ let configurations = GenesysConfigurations(environment: "Environment ID",
                                            environmentURL: "Environment URL",
                                            queue: "Queue",
                                            engineUrl: "smartVideo URL")
+                                           
+let engine = GenesysEngine(environment: environment, isVideo: isVideo, configurations: configurations, memberInfo: memberInfo)
 ```
 
 ## Get started with SmartVideo SDK
@@ -222,7 +224,6 @@ extension MyAwesomeVC: SmartVideoDelegate {
     func genesysEngageChat(message: String, from: String) {
         // Receiving message from GenesysEngage chat
     }
-}
 }
 ```
 
