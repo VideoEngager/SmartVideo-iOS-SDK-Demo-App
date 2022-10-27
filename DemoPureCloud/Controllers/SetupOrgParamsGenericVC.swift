@@ -380,7 +380,6 @@ extension SetupOrgParamsGenericVC: SmartVideoDelegate {
             
             
             let outgoingCallVC = OutgoingCallVC()
-            outgoingCallVC.hasVideo = self.hasVideo
             outgoingCallVC.modalPresentationStyle = .fullScreen
             if let presenting = self.presentedViewController {
                 presenting.present(outgoingCallVC, animated: true)

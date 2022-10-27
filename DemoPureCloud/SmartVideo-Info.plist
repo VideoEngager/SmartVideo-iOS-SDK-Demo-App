@@ -46,6 +46,8 @@
 		<dict>
 			<key>SmartVideo URL</key>
 			<string>staging.videoengager.com</string>
+			<key>Tenant ID</key>
+			<string></string>
 			<key>Environment</key>
 			<string>staging</string>
 			<key>agents</key>
@@ -69,23 +71,25 @@
 			<string>1b4b1124-b51c-4c38-899f-3a90066c76cf</string>
 		</dict>
 		<dict>
-			<key>SmartVideo URL</key>
-			<string>videome.videoengager.com</string>
-			<key>Environment</key>
-			<string>live</string>
 			<key>agents</key>
 			<array>
 				<dict>
 					<key>Tenant ID</key>
-					<string>hbvvUTaZxCVLikpB</string>
+					<string>0FphTk091nt7G1W7</string>
 					<key>Name</key>
 					<string>mobiledev</string>
 				</dict>
 			</array>
+			<key>SmartVideo URL</key>
+			<string>videome.videoengager.com</string>
+			<key>Tenant ID</key>
+			<string>0FphTk091nt7G1W7</string>
+			<key>Environment</key>
+			<string>live</string>
 			<key>Environment URL</key>
 			<string>https://api.mypurecloud.com</string>
 			<key>Queue Name</key>
-			<string>MobileDev</string>
+			<string>Support</string>
 			<key>Organization ID</key>
 			<string>c4b553c3-ee42-4846-aeb1-f0da3d85058e</string>
 			<key>Engine</key>

@@ -27,7 +27,7 @@
 
 "server_url" = "Server-URL";
 "agent_url" = "Agenten-URL";
-"first_namr" = "Vorname";
+"first_name" = "Vorname";
 "last_name" = "Nachname";
 "email" = "Email";
 "subject" = "Gegenstand";

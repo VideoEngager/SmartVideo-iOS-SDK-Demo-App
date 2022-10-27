@@ -27,7 +27,7 @@
 
 "server_url" = "Сървър URL";
 "agent_url" = "Агент URL";
-"first_namr" = "Име";
+"first_name" = "Име";
 "last_name" = "Фамилия";
 "email" = "Имейл";
 "subject" = "Относно";

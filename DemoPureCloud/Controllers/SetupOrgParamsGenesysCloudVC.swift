@@ -225,7 +225,7 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
             if environment == .staging {
                 engineUrl = "staging.videoengager.com"
             }
-            Genesys.shared.updateConfiguration(configuration: GenesysConfigurations(environment: environment, organizationID: setupOrgParamsView.initParams[1], deploymentID: setupOrgParamsView.initParams[2], shortUrl: setupOrgParamsView.initParams[3], tenantId: setupOrgParamsView.initParams[4], environmentURL: setupOrgParamsView.initParams[5], queue: setupOrgParamsView.initParams[6], engineUrl: engineUrl))
+            Genesys.shared.updateConfiguration(configuration: GenesysConfigurations(environment: environment, organizationID: setupOrgParamsView.initParams[1], deploymentID: setupOrgParamsView.initParams[2], tenantId: setupOrgParamsView.initParams[4], environmentURL: setupOrgParamsView.initParams[5], queue: setupOrgParamsView.initParams[6], engineUrl: engineUrl))
             
             
             let avatarImageUrl = "https://my_avatar_image_url"
@@ -282,7 +282,7 @@ class SetupOrgParamsGenesysCloudVC: UIViewController {
             if environment == .staging {
                 engineUrl = "staging.videoengager.com"
             }
-            Genesys.shared.updateConfiguration(configuration: GenesysConfigurations(environment: environment, organizationID: setupOrgParamsView.initParams[1], deploymentID: setupOrgParamsView.initParams[2], shortUrl: setupOrgParamsView.initParams[3], tenantId: setupOrgParamsView.initParams[4], environmentURL: setupOrgParamsView.initParams[5], queue: setupOrgParamsView.initParams[6], engineUrl: engineUrl))
+            Genesys.shared.updateConfiguration(configuration: GenesysConfigurations(environment: environment, organizationID: setupOrgParamsView.initParams[1], deploymentID: setupOrgParamsView.initParams[2], tenantId: setupOrgParamsView.initParams[4], environmentURL: setupOrgParamsView.initParams[5], queue: setupOrgParamsView.initParams[6], engineUrl: engineUrl))
             
             let avatarImageUrl = "https://my_avatar_image_url"
             let urlClient = "https://my_url_client"
@@ -551,7 +551,6 @@ extension SetupOrgParamsGenesysCloudVC: SmartVideoDelegate {
             
             
             let outgoingCallVC = OutgoingCallVC()
-            outgoingCallVC.hasVideo = self.hasVideo
             outgoingCallVC.modalPresentationStyle = .fullScreen
             if let presenting = self.presentedViewController {
                 presenting.present(outgoingCallVC, animated: true)

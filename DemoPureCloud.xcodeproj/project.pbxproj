@@ -30,7 +30,14 @@
 		2DEEEA8427C1CB6A007A6D0A /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEEEA8327C1CB6A007A6D0A /* ChatVC.swift */; };
 		2DEEEA8627C1CB9C007A6D0A /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEEEA8527C1CB9C007A6D0A /* ChatView.swift */; };
 		4D50526C25B5CB9500567198 /* SmartVideo-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D50526B25B5CB9500567198 /* SmartVideo-Info.plist */; };
-		5CEB292D0FB833DBC4070AEC /* Pods_DemoPureCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F848661FD8B46AE68FEF86F7 /* Pods_DemoPureCloud.framework */; };
+		4D56464328AAE97F00C11610 /* GenesysEngageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D56463A28AAE97F00C11610 /* GenesysEngageView.swift */; };
+		4D56464428AAE97F00C11610 /* GenesysEngageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D56463B28AAE97F00C11610 /* GenesysEngageViewModel.swift */; };
+		4D56464528AAE97F00C11610 /* PlatformSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D56463C28AAE97F00C11610 /* PlatformSelectionView.swift */; };
+		4D56464628AAE97F00C11610 /* GenericViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D56463E28AAE97F00C11610 /* GenericViewModel.swift */; };
+		4D56464728AAE97F00C11610 /* GenericView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D56463F28AAE97F00C11610 /* GenericView.swift */; };
+		4D56464828AAE97F00C11610 /* GenesysCloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D56464128AAE97F00C11610 /* GenesysCloudView.swift */; };
+		4D56464928AAE97F00C11610 /* GenesysCloudViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D56464228AAE97F00C11610 /* GenesysCloudViewModel.swift */; };
+		A6A4C5EFEEAE575E2E9C79CD /* Pods_DemoPureCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C10BE471234393E1CE9EAACE /* Pods_DemoPureCloud.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,10 +70,17 @@
 		2DEEEA8327C1CB6A007A6D0A /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		2DEEEA8527C1CB9C007A6D0A /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		4D50526B25B5CB9500567198 /* SmartVideo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SmartVideo-Info.plist"; sourceTree = "<group>"; };
+		4D56463A28AAE97F00C11610 /* GenesysEngageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenesysEngageView.swift; sourceTree = "<group>"; };
+		4D56463B28AAE97F00C11610 /* GenesysEngageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenesysEngageViewModel.swift; sourceTree = "<group>"; };
+		4D56463C28AAE97F00C11610 /* PlatformSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformSelectionView.swift; sourceTree = "<group>"; };
+		4D56463E28AAE97F00C11610 /* GenericViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericViewModel.swift; sourceTree = "<group>"; };
+		4D56463F28AAE97F00C11610 /* GenericView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericView.swift; sourceTree = "<group>"; };
+		4D56464128AAE97F00C11610 /* GenesysCloudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenesysCloudView.swift; sourceTree = "<group>"; };
+		4D56464228AAE97F00C11610 /* GenesysCloudViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenesysCloudViewModel.swift; sourceTree = "<group>"; };
 		4DB4577A288ED5D7000B4855 /* DemoPureCloud.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemoPureCloud.entitlements; sourceTree = "<group>"; };
-		714CD78BFE7BF0F6D006A824 /* Pods-DemoPureCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoPureCloud.release.xcconfig"; path = "Target Support Files/Pods-DemoPureCloud/Pods-DemoPureCloud.release.xcconfig"; sourceTree = "<group>"; };
-		CE16C9B1335DE89173F5A2D3 /* Pods-DemoPureCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoPureCloud.debug.xcconfig"; path = "Target Support Files/Pods-DemoPureCloud/Pods-DemoPureCloud.debug.xcconfig"; sourceTree = "<group>"; };
-		F848661FD8B46AE68FEF86F7 /* Pods_DemoPureCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoPureCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		552E304E5C1F79AC2944C9F4 /* Pods-DemoPureCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoPureCloud.debug.xcconfig"; path = "Target Support Files/Pods-DemoPureCloud/Pods-DemoPureCloud.debug.xcconfig"; sourceTree = "<group>"; };
+		96DDED19400137D42126850E /* Pods-DemoPureCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoPureCloud.release.xcconfig"; path = "Target Support Files/Pods-DemoPureCloud/Pods-DemoPureCloud.release.xcconfig"; sourceTree = "<group>"; };
+		C10BE471234393E1CE9EAACE /* Pods_DemoPureCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoPureCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CEB292D0FB833DBC4070AEC /* Pods_DemoPureCloud.framework in Frameworks */,
+				A6A4C5EFEEAE575E2E9C79CD /* Pods_DemoPureCloud.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +148,7 @@
 				2DCF54A9257588AA00E566C7 /* DemoPureCloud */,
 				2DCF54A8257588AA00E566C7 /* Products */,
 				7BFA2BDF80BD9159BC593A55 /* Pods */,
-				A2B40AAEEF5A882CA6D56775 /* Frameworks */,
+				D1E89DE205EAE813397A2039 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,8 +166,9 @@
 				4DB4577A288ED5D7000B4855 /* DemoPureCloud.entitlements */,
 				2DDE64BB27B57E1000CCF484 /* Assets */,
 				2DBF29432576757300BF8537 /* Controllers */,
-				2DCF54B6257588AF00E566C7 /* Assets.xcassets */,
 				2DBF29472576758200BF8537 /* Views */,
+				4D56463828AAE97F00C11610 /* SwiftUI */,
+				2DCF54B6257588AF00E566C7 /* Assets.xcassets */,
 				2DCF54BB257588AF00E566C7 /* Info.plist */,
 				4D50526B25B5CB9500567198 /* SmartVideo-Info.plist */,
 				2DCF54B3257588AA00E566C7 /* DemoPureCloud.xcdatamodeld */,
@@ -171,19 +186,57 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		4D56463828AAE97F00C11610 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				4D56463C28AAE97F00C11610 /* PlatformSelectionView.swift */,
+				4D56463D28AAE97F00C11610 /* Generic */,
+				4D56464028AAE97F00C11610 /* GenesysCloud */,
+				4D56463928AAE97F00C11610 /* GenesysEngage */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		4D56463928AAE97F00C11610 /* GenesysEngage */ = {
+			isa = PBXGroup;
+			children = (
+				4D56463A28AAE97F00C11610 /* GenesysEngageView.swift */,
+				4D56463B28AAE97F00C11610 /* GenesysEngageViewModel.swift */,
+			);
+			path = GenesysEngage;
+			sourceTree = "<group>";
+		};
+		4D56463D28AAE97F00C11610 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				4D56463E28AAE97F00C11610 /* GenericViewModel.swift */,
+				4D56463F28AAE97F00C11610 /* GenericView.swift */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
+		4D56464028AAE97F00C11610 /* GenesysCloud */ = {
+			isa = PBXGroup;
+			children = (
+				4D56464128AAE97F00C11610 /* GenesysCloudView.swift */,
+				4D56464228AAE97F00C11610 /* GenesysCloudViewModel.swift */,
+			);
+			path = GenesysCloud;
+			sourceTree = "<group>";
+		};
 		7BFA2BDF80BD9159BC593A55 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CE16C9B1335DE89173F5A2D3 /* Pods-DemoPureCloud.debug.xcconfig */,
-				714CD78BFE7BF0F6D006A824 /* Pods-DemoPureCloud.release.xcconfig */,
+				552E304E5C1F79AC2944C9F4 /* Pods-DemoPureCloud.debug.xcconfig */,
+				96DDED19400137D42126850E /* Pods-DemoPureCloud.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		A2B40AAEEF5A882CA6D56775 /* Frameworks */ = {
+		D1E89DE205EAE813397A2039 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F848661FD8B46AE68FEF86F7 /* Pods_DemoPureCloud.framework */,
+				C10BE471234393E1CE9EAACE /* Pods_DemoPureCloud.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -195,11 +248,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2DCF54D4257588B000E566C7 /* Build configuration list for PBXNativeTarget "DemoPureCloud" */;
 			buildPhases = (
-				0C2767F7B69030AC256EEF9C /* [CP] Check Pods Manifest.lock */,
+				662B9DB7753248F88DC900B8 /* [CP] Check Pods Manifest.lock */,
 				2DCF54A3257588AA00E566C7 /* Sources */,
 				2DCF54A4257588AA00E566C7 /* Frameworks */,
 				2DCF54A5257588AA00E566C7 /* Resources */,
-				7F116FF9465CFB0832E473E5 /* [CP] Embed Pods Frameworks */,
+				4DCCB4872EBA0C417F0F485E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,7 +315,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0C2767F7B69030AC256EEF9C /* [CP] Check Pods Manifest.lock */ = {
+		4DCCB4872EBA0C417F0F485E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoPureCloud/Pods-DemoPureCloud-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoPureCloud/Pods-DemoPureCloud-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoPureCloud/Pods-DemoPureCloud-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		662B9DB7753248F88DC900B8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -284,23 +354,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7F116FF9465CFB0832E473E5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DemoPureCloud/Pods-DemoPureCloud-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DemoPureCloud/Pods-DemoPureCloud-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoPureCloud/Pods-DemoPureCloud-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -312,14 +365,21 @@
 				2DEEEA8427C1CB6A007A6D0A /* ChatVC.swift in Sources */,
 				2DBF294C2576775B00BF8537 /* LanguageSelectionVC.swift in Sources */,
 				2D6AED8E25769AC200CCA15F /* Extensions.swift in Sources */,
+				4D56464928AAE97F00C11610 /* GenesysCloudViewModel.swift in Sources */,
+				4D56464428AAE97F00C11610 /* GenesysEngageViewModel.swift in Sources */,
 				2D6AED982577836E00CCA15F /* NotificationInternetConnection.swift in Sources */,
+				4D56464728AAE97F00C11610 /* GenericView.swift in Sources */,
 				2D6B6047267CDBAF001E8B80 /* SetupOrgParamsEngageView.swift in Sources */,
 				2D6AED9D2577C70C00CCA15F /* SetupOrgParamsView.swift in Sources */,
+				4D56464528AAE97F00C11610 /* PlatformSelectionView.swift in Sources */,
 				2DBF293C2575BBE500BF8537 /* Helpers.swift in Sources */,
 				2DECDAEC25BA04F1006227C0 /* SetupOrgParamsGenericVC.swift in Sources */,
+				4D56464328AAE97F00C11610 /* GenesysEngageView.swift in Sources */,
+				4D56464628AAE97F00C11610 /* GenericViewModel.swift in Sources */,
 				2DCF54AF257588AA00E566C7 /* LaunchScreen.swift in Sources */,
 				2DEEEA8627C1CB9C007A6D0A /* ChatView.swift in Sources */,
 				2DCF54AB257588AA00E566C7 /* AppDelegate.swift in Sources */,
+				4D56464828AAE97F00C11610 /* GenesysCloudView.swift in Sources */,
 				2DCF54B5257588AA00E566C7 /* DemoPureCloud.xcdatamodeld in Sources */,
 				2DECDADD25BA02CA006227C0 /* SetupOrgParamsGenesysEngageVC.swift in Sources */,
 				2D6AED7F25767DC400CCA15F /* SetupService.swift in Sources */,
@@ -477,21 +537,22 @@
 		};
 		2DCF54D5257588B000E566C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE16C9B1335DE89173F5A2D3 /* Pods-DemoPureCloud.debug.xcconfig */;
+			baseConfigurationReference = 552E304E5C1F79AC2944C9F4 /* Pods-DemoPureCloud.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DemoPureCloud/DemoPureCloud.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = SNXJNLUKY6;
 				INFOPLIST_FILE = DemoPureCloud/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.13.0;
+				MARKETING_VERSION = 1.13.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.videoengager.smartvideodemoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -502,21 +563,22 @@
 		};
 		2DCF54D6257588B000E566C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 714CD78BFE7BF0F6D006A824 /* Pods-DemoPureCloud.release.xcconfig */;
+			baseConfigurationReference = 96DDED19400137D42126850E /* Pods-DemoPureCloud.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DemoPureCloud/DemoPureCloud.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = SNXJNLUKY6;
 				INFOPLIST_FILE = DemoPureCloud/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.13.0;
+				MARKETING_VERSION = 1.13.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.videoengager.smartvideodemoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

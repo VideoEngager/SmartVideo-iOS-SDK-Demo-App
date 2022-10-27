@@ -7,6 +7,7 @@
 
 import UIKit
 import SmartVideoSDK
+import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -21,7 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = LaunchScreen()
+//        window?.rootViewController = LaunchScreen()
+        window?.rootViewController = UIHostingController(rootView: PlatformSelectionView())
         window?.makeKeyAndVisible()
         
         

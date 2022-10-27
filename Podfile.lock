@@ -9,9 +9,9 @@ PODS:
   - L10n-swift/IBInspectable (5.10.2):
     - L10n-swift/Core
   - ShimmerSwift (2.1.1)
-  - SmartVideo (1.13.0):
+  - SmartVideo (1.13.2):
     - WebRTC-lib
-  - WebRTC-lib (103.0.0)
+  - WebRTC-lib (104.0.0)
 
 DEPENDENCIES:
   - L10n-swift (~> 5.8)
@@ -31,14 +31,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SmartVideo:
-    :commit: ce9ef7f344272d7404454d775da551bd7eaf633f
+    :commit: bcd2b6cb5954599401591b7c85807bc63c126c7f
     :git: https://github.com/VideoEngager/SmartVideo-iOS-SDK
 
 SPEC CHECKSUMS:
   L10n-swift: 55773890db57d1efe367434751018ab6ceb058b0
   ShimmerSwift: f7ed2daf9c246de8299dfd9e12c6ab465cba9842
-  SmartVideo: f598681adc2205194120233e537f6eed3522409f
-  WebRTC-lib: a5016d943e92f2543ca113731c0122eef8896971
+  SmartVideo: 2b7026ef403399877797b1893bd65be6cda3d42f
+  WebRTC-lib: 6c387d63a8d649e8171f548a67b740127cc299b3
 
 PODFILE CHECKSUM: d649174acd398335b37249dbe9251ec26e7533b6
 

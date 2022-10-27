@@ -137,7 +137,7 @@ class SetupOrgParamsEngageView: UIView, UITableViewDelegate, UITableViewDataSour
         placeholderArray = [
             "server_url".l10n(),
             "agent_url".l10n(),
-            "first_namr".l10n(),
+            "first_name".l10n(),
             "last_name".l10n(),
             "email".l10n(),
             "subject".l10n(),

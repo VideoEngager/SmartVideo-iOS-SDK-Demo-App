@@ -391,7 +391,6 @@ extension SetupOrgParamsGenesysEngageVC: SmartVideoDelegate {
             }, completion: nil)
             
             let outgoingCallVC = OutgoingCallVC()
-            outgoingCallVC.hasVideo = true//self.hasVideo
             outgoingCallVC.modalPresentationStyle = .fullScreen
             if let presenting = self.presentedViewController {
                 presenting.present(outgoingCallVC, animated: true)

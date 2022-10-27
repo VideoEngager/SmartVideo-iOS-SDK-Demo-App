@@ -80,7 +80,19 @@ If you want to configure the demo app to run with your own Genesys Cloud organiz
 
 For more details on how to obtain some of your specific parameters, please consult with your Genesys Cloud administrator or refer to our [HelpDesk article](https://help.videoengager.com/hc/en-us/articles/360061175891-How-to-obtain-my-Genesys-Cloud-Parameters-required-to-setup-SmartVideo-SDKs).
 
+### Parameters could be set by two different ways
+1. Setup by add to the project a SmartVideo-Info.plist provided by us
+2. Setup parameters on the beginning of any call
 
+```
+let configurations = GenesysConfigurations(environment: "Environment ID",
+                                           organizationID: "Organization ID",
+                                           deploymentID: "Deployment ID",
+                                           tenantId: "Tenant ID",
+                                           environmentURL: "Environment URL",
+                                           queue: "Queue",
+                                           engineUrl: "smartVideo URL")
+```
 
 ## Get started with SmartVideo SDK
 After installation and configuration is done, it is time to integrate the SmartVideo SDK within your own app. Easiest would be to use the demo app in this repository. If you want to do so, pls type in the terminal:
@@ -179,6 +191,41 @@ extension MyAwesomeVC: SmartVideoDelegate {
 
 ```
 
+### SmartVideoDelegate
+From delegate can be handle different SDK events.
+
+```
+extension MyAwesomeVC: SmartVideoDelegate {
+    func failedEstablishCommunicationChannel(type: SmartVideoCommunicationChannelType) {
+        // Failed to established a connection with server
+    }
+    
+    func didEstablishCommunicationChannel(type: SmartVideoCommunicationChannelType) {
+        // Successful established a connection with server
+        // Can be start the audio or video call
+        // Normally Call UI should be called here
+        // See the demo above paragraph
+    }
+    
+    func callStatusChanged(status: SmartVideoCallStatus) {
+        // Return Call Status 
+    }
+    
+    func errorHandler(error: SmartVideoError) {
+        // Return every error occur during SDK work
+    }
+    
+    func onAgentTimeout() -> Bool {
+        // Should close the Outgoing View Controller when agent doesn't answer
+    }
+    
+    func genesysEngageChat(message: String, from: String) {
+        // Receiving message from GenesysEngage chat
+    }
+}
+}
+```
+
 ### Add buttons for Click-to-Video and/or Click-to-Audio
 This step requires to create buttons for adding a click to video and/or a click to voice functionality. Below is an example:
 
@@ -272,6 +319,17 @@ You can use this method of SDK to make you own implementation for Escalation or 
 ```
 func callByInvitation(url: String) {
     SmartVideo.veVisitorVideoCall(link: url)
+}
+```
+
+### Short URL call 
+You can use this method of SDK to make you own implementation for Escalation or Schedule scenarios. If your users receives special invitation Url when a interaction is not started (for example from Calendar app). Below is an example:
+
+```
+func callByInvitation(url: String) {
+    SmartVideo.environment = .live
+    let engine = GenericEngine(environment: .live, invitationURL: url)
+    SmartVideo.connect(engine: engine, isVideo: false)
 }
 ```
 
