@@ -12,6 +12,7 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var floatingButtonController: FloatingButtonController?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -26,9 +27,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = UIHostingController(rootView: PlatformSelectionView())
         window?.makeKeyAndVisible()
         
+        guard let scene = (scene as? UIWindowScene) else { return }
+        floatingButtonController = FloatingButtonController(scene: scene)
+        floatingButtonController?.button.addTarget(self, action: #selector(floatingButtonWasTapped), for: .touchUpInside)
         
     }
-
+    
+    @objc func floatingButtonWasTapped() {
+        MailSender.SendHistory()
+    }
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

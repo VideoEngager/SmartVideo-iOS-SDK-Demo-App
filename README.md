@@ -347,7 +347,64 @@ Run time errors cover the usage of the SDK within the host app. When the host ap
 The other type of errors that this SDK handles is during already established call. For instance, if the host app internet gets down for some reason, the SDK will inform the mobile app user and shortly after that the call will be ended. The host app can implement an optional delegate method, if some other action is required to be processed, when this event is triggered. This delegate method is `isConnectedToInternet(isConnected: Bool)`.
 Another example of error handling inside the SDK, are when agent's internet connectivity is down. In this case, the SDK will again inform the mobile app user and shortly after that the call will be also ended. The host app can implement an optional delegate method, if some other action is required to be processed, when this event is triggered. This delegate method is `peerConnectionLost()`.
 
+### Handle Logs
+SmartVideo SDK provide you every step log data. It is separate by type and level. Logs could be set by your needs. Each level of logs has unique icon to be distingue. 
+For example:
 
+```
+SmartVideo.setLogging(level: .verbose, types: [.rtc, .socket, .rest, .webRTC, .genesys, .callkit])
+```
+or
+```
+SmartVideo.setLogging(level: .error, types: [.all])
+```
+
+#### Levels
+- 🚫 Error: Show logs for critical errors where the SDK will stop and cannot continue to work.
+- ⚠️ Warning: Present a warning that could be a problem but the SDK WILL continue to work.
+- 🔸 Log: Log the steps of the SDK execution. Show important information that is gather and exchange.
+- 🔹 Verbose: Last level, that print deep information about the process. Generally is using to debug.
+
+#### Types
+- General: Log some general message about SDK flow.
+- Rest: Log messages related with REST communication.
+- Socket: Log messages related with Socket communication.
+- RTC: Log messages related to RTC encoding and decoding.
+- WebRTC: Log messages related to work with WebWRTC library.
+- Generic: Log messages related to Generic connection of SDK.
+- Generic: Log messages related to Gensys Cloud connection of SDK.
+- Callkit: Log messages related to CallKit integration.
+- SdkInitialization: Log messages related to first step of SDK initialization.
+- All: Show all of above type logs.
+
+You could extract SmartVideo logs if you need (for example to send to us). 
+
+```
+let history = Logging.fullHistory()
+```
+
+Or clean history if you want.
+
+```
+Logging.resetHistory()
+```
+
+An example how to send the log to anyone:
+
+```
+let mailComposer = MFMailComposeViewController()
+mailComposer.mailComposeDelegate = yourDelegate
+mailComposer.setToRecipients(mails)
+mailComposer.setSubject("SmartVideo Logs" )
+mailComposer.setMessageBody("", isHTML: false)
+
+let history = Logging.fullHistory()
+if let data = history.data(using: .utf8) {
+    mailComposer.addAttachmentData(data, mimeType: "text/plain", fileName: path)
+    topViewController.present(mailComposer, animated: true, completion: nil)
+}
+```
+   
 
 ## Minimum Supported Version 
 

@@ -126,6 +126,8 @@ class GenesysCloudViewModel: ObservableObject {
     func readParameters() {
         SmartVideo.chatDelegate = self
         
+        if customParams { return }
+        
         var nsDictionary: NSDictionary?
         if let path = Bundle.main.path(forResource: "SmartVideo-Info", ofType: "plist") {
             nsDictionary = NSDictionary(contentsOfFile: path)

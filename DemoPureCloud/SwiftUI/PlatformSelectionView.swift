@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AVFoundation
+import SmartVideoSDK
 
 struct PlatformSelectionView: View {
     
@@ -15,6 +16,8 @@ struct PlatformSelectionView: View {
     var body: some View {
         ZStack {
             VStack(spacing: 100) {
+                
+                Spacer()
                 Button(action: { self.show(type: .generic) } ) {
                     Image("generic")
                         .resizable()
@@ -34,6 +37,20 @@ struct PlatformSelectionView: View {
                         .frame(width: 200, height: 100, alignment: .center)
                 }
                 
+                Spacer()
+                HStack {
+                    Spacer()
+                    VStack {
+                        if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                            Text("app_version".l10n() + " " + appVersion)
+                        }
+                        Text("sdk_version".l10n() + " " + SmartVideo.version)
+                    }
+                    .font(.system(size: 14))
+                    .foregroundColor(Color(uiColor: .AppBackgroundColor))
+                }
+                .padding(.bottom, 100)
+                .padding(.horizontal, 20)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.white)

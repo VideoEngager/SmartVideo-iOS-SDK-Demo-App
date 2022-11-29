@@ -121,6 +121,16 @@ struct GenesysCloudView: View {
                     .frame(maxWidth: .infinity)
                     .background(Color(uiColor: .AppBackgroundColor))
                     .cornerRadius(10)
+                    
+                    Button(action: { self.sendLogs() }) {
+                        Text("Send Logs")
+                            .foregroundColor(.white)
+                    }
+                    .frame(height: 50)
+                    .frame(maxWidth: .infinity)
+                    .background(Color(uiColor: .AppBackgroundColor))
+                    .cornerRadius(10)
+                    .padding(.top, 40)
                 }
             }
             .padding(.horizontal, 25)
@@ -160,6 +170,10 @@ struct GenesysCloudView: View {
             }
             .overlay(RoundedRectangle(cornerRadius: 10)
                 .stroke(Color(uiColor: .AppBackgroundColor)))
+    }
+    
+    func sendLogs() {
+        MailSender.SendHistory()
     }
 }
 

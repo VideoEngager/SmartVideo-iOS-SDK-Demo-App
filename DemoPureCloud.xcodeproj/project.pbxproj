@@ -29,6 +29,8 @@
 		2DECDAEC25BA04F1006227C0 /* SetupOrgParamsGenericVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DECDAEB25BA04F1006227C0 /* SetupOrgParamsGenericVC.swift */; };
 		2DEEEA8427C1CB6A007A6D0A /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEEEA8327C1CB6A007A6D0A /* ChatVC.swift */; };
 		2DEEEA8627C1CB9C007A6D0A /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEEEA8527C1CB9C007A6D0A /* ChatView.swift */; };
+		4D2F133529152F9600700F68 /* FloatingButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F133429152F9600700F68 /* FloatingButtonController.swift */; };
+		4D2F13382915349300700F68 /* MailSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F13372915349300700F68 /* MailSender.swift */; };
 		4D50526C25B5CB9500567198 /* SmartVideo-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D50526B25B5CB9500567198 /* SmartVideo-Info.plist */; };
 		4D56464328AAE97F00C11610 /* GenesysEngageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D56463A28AAE97F00C11610 /* GenesysEngageView.swift */; };
 		4D56464428AAE97F00C11610 /* GenesysEngageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D56463B28AAE97F00C11610 /* GenesysEngageViewModel.swift */; };
@@ -69,6 +71,8 @@
 		2DECDAEB25BA04F1006227C0 /* SetupOrgParamsGenericVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupOrgParamsGenericVC.swift; sourceTree = "<group>"; };
 		2DEEEA8327C1CB6A007A6D0A /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		2DEEEA8527C1CB9C007A6D0A /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		4D2F133429152F9600700F68 /* FloatingButtonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButtonController.swift; sourceTree = "<group>"; };
+		4D2F13372915349300700F68 /* MailSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailSender.swift; sourceTree = "<group>"; };
 		4D50526B25B5CB9500567198 /* SmartVideo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SmartVideo-Info.plist"; sourceTree = "<group>"; };
 		4D56463A28AAE97F00C11610 /* GenesysEngageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenesysEngageView.swift; sourceTree = "<group>"; };
 		4D56463B28AAE97F00C11610 /* GenesysEngageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenesysEngageViewModel.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 				2DECDADC25BA02CA006227C0 /* SetupOrgParamsGenesysEngageVC.swift */,
 				2DECDAD425B9FF07006227C0 /* PlatformSelection.swift */,
 				2DEEEA8327C1CB6A007A6D0A /* ChatVC.swift */,
+				4D2F133429152F9600700F68 /* FloatingButtonController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				4DB4577A288ED5D7000B4855 /* DemoPureCloud.entitlements */,
+				4D2F13362915349300700F68 /* Utils */,
 				2DDE64BB27B57E1000CCF484 /* Assets */,
 				2DBF29432576757300BF8537 /* Controllers */,
 				2DBF29472576758200BF8537 /* Views */,
@@ -184,6 +190,14 @@
 				2DDE64BC27B57F7E00CCF484 /* sample.mp4 */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		4D2F13362915349300700F68 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4D2F13372915349300700F68 /* MailSender.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		4D56463828AAE97F00C11610 /* SwiftUI */ = {
@@ -362,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DBF29362575B9BD00BF8537 /* Constants.swift in Sources */,
+				4D2F133529152F9600700F68 /* FloatingButtonController.swift in Sources */,
 				2DEEEA8427C1CB6A007A6D0A /* ChatVC.swift in Sources */,
 				2DBF294C2576775B00BF8537 /* LanguageSelectionVC.swift in Sources */,
 				2D6AED8E25769AC200CCA15F /* Extensions.swift in Sources */,
@@ -381,6 +396,7 @@
 				2DCF54AB257588AA00E566C7 /* AppDelegate.swift in Sources */,
 				4D56464828AAE97F00C11610 /* GenesysCloudView.swift in Sources */,
 				2DCF54B5257588AA00E566C7 /* DemoPureCloud.xcdatamodeld in Sources */,
+				4D2F13382915349300700F68 /* MailSender.swift in Sources */,
 				2DECDADD25BA02CA006227C0 /* SetupOrgParamsGenesysEngageVC.swift in Sources */,
 				2D6AED7F25767DC400CCA15F /* SetupService.swift in Sources */,
 				2DECDAD525B9FF07006227C0 /* PlatformSelection.swift in Sources */,
@@ -544,7 +560,7 @@
 				CODE_SIGN_ENTITLEMENTS = DemoPureCloud/DemoPureCloud.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = SNXJNLUKY6;
 				INFOPLIST_FILE = DemoPureCloud/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -552,7 +568,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.13.3;
+				MARKETING_VERSION = 1.13.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.videoengager.smartvideodemoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -570,7 +586,7 @@
 				CODE_SIGN_ENTITLEMENTS = DemoPureCloud/DemoPureCloud.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = SNXJNLUKY6;
 				INFOPLIST_FILE = DemoPureCloud/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -578,7 +594,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.13.3;
+				MARKETING_VERSION = 1.13.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.videoengager.smartvideodemoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
