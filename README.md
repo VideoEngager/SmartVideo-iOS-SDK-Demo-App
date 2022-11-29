@@ -360,22 +360,22 @@ SmartVideo.setLogging(level: .error, types: [.all])
 ```
 
 #### Levels
-- 🚫 Error: Show logs for critical errors where the SDK will stop and cannot continue to work.
-- ⚠️ Warning: Present a warning that could be a problem but the SDK WILL continue to work.
-- 🔸 Log: Log the steps of the SDK execution. Show important information that is gather and exchange.
-- 🔹 Verbose: Last level, that print deep information about the process. Generally is using to debug.
+- 🚫 **Error**: Show logs for critical errors where the SDK will stop and cannot continue to work.
+- ⚠️ **Warning**: Present a warning that could be a problem but the SDK WILL continue to work.
+- 🔸 **Info**: Log the steps of the SDK execution. Show important information that is gather and exchange.
+- 🔹 **Verbose**: Last level, that print deep information about the process. Generally is using to debug.
 
 #### Types
-- General: Log some general message about SDK flow.
-- Rest: Log messages related with REST communication.
-- Socket: Log messages related with Socket communication.
-- RTC: Log messages related to RTC encoding and decoding.
-- WebRTC: Log messages related to work with WebWRTC library.
-- Generic: Log messages related to Generic connection of SDK.
-- Generic: Log messages related to Gensys Cloud connection of SDK.
-- Callkit: Log messages related to CallKit integration.
-- SdkInitialization: Log messages related to first step of SDK initialization.
-- All: Show all of above type logs.
+- **General**: Log some general message about SDK flow.
+- **Rest**: Log messages related with REST communication.
+- **Socket**: Log messages related with Socket communication.
+- **RTC**: Log messages related to RTC encoding and decoding.
+- **WebRTC**: Log messages related to work with WebWRTC library.
+- **Generic**: Log messages related to Generic connection of SDK.
+- **Generic**: Log messages related to Gensys Cloud connection of SDK.
+- **Callkit**: Log messages related to CallKit integration.
+- **SdkInitialization**: Log messages related to first step of SDK initialization.
+- **All**: Show all of above type logs.
 
 You could extract SmartVideo logs if you need (for example to send to us). 
 
