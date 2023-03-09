@@ -256,8 +256,62 @@ class MyAwesomeVC: UIViewController {
 
 ```
  
+### Add ShareScreen functionality
 
-
+1. Create a AppGroup and add it to the project.
+2. Add a "Broadcast Upload Extension" to your project.  
+  2.1 Setup extension name. The name will be visible later when user select share screen app. Good practice is to be the same name like the app.
+  2.2 Setup extension team.
+  2.3 Add created group to the extension.
+3. Open the newly created extension folder and replace code below in SmapleHandler.swift. Replace the group name into the code.
+```
+class SampleHandler: RPBroadcastSampleHandler, SmartVideoShareScreenDelegate {
+    
+    let shareScreen = SmartVideoShareScreen(appGroupName: "group.com.team.appbundle.example")
+     
+    override init() {
+        super.init()
+        
+        SmartVideo.setLogging(level: .verbose, types: [.sharescreen])
+        self.shareScreen.delegate = self
+    }
+    
+    override func broadcastStarted(withSetupInfo setupInfo: [String: NSObject]?) {
+        self.shareScreen.start()
+    }
+    
+    override func broadcastPaused() {
+        self.shareScreen.pause()
+    }
+    
+    override func broadcastResumed() {
+        self.shareScreen.resume()
+    }
+    
+    override func broadcastFinished() {
+        self.shareScreen.stop()
+    }
+    
+    override func processSampleBuffer(_ sampleBuffer: CMSampleBuffer, with sampleBufferType: RPSampleBufferType) {
+        self.shareScreen.processSampleBuffer(sampleBuffer, with: sampleBufferType)
+    }
+    
+    func finished(with error: Error) {
+        finishBroadcastWithError(error)
+    }
+}
+```
+4. Enable share screen to the SmartVideo sdk. Where you create the engine and setup SmartVideo add:
+```
+...
+let shareScreenSettings = GenesysEngineSettings.ShareScreenSettings(isOn: true,
+                                                                    appGroupName: "group.com.team.appbundle.example")
+        let settings = GenesysEngineSettings(shareScreen: shareScreenSettings)
+        
+let engine = GenesysEngine(environment: environment, isVideo: isVideo, configurations: configurations, settings: settings, memberInfo: memberInfo)
+...
+```
+Enjoy
 
 ### Error Handling
 This step requires to prepare your app for error handling. SmartVideo SDK considers two type of errors:
